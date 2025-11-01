@@ -1,0 +1,48 @@
+{
+  "doctype": "DocType",
+  "name": "Correspondence Reference",
+  "module": "Construction Management",
+  "istable": 1,
+  "custom": 0,
+  "fields": [
+    {
+      "fieldname": "reference_doctype",
+      "label": "Reference Doctype",
+      "fieldtype": "Link",
+      "options": "DocType",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reference_document",
+      "label": "Reference Document",
+      "fieldtype": "Dynamic Link",
+      "options": "reference_doctype",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "doc_status",
+      "label": "Document Status",
+      "fieldtype": "Select",
+      "options": "Draft\nSubmitted\nCancelled",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "workflow_state",
+      "label": "Workflow State",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "user",
+      "label": "User",
+      "fieldtype": "Link",
+      "options": "User",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "notes",
+      "label": "Notes",
+      "fieldtype": "Small Text"
+    }
+  ]
+}

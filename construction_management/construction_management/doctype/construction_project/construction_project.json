@@ -1,0 +1,163 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:project_name",
+ "creation": "2024-01-15 10:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_name",
+  "project_scope",
+  "building_type",
+  "site_location",
+  "address",
+  "construction_stages_section",
+  "construction_stages",
+  "project_status",
+  "start_date",
+  "expected_end_date",
+  "actual_end_date",
+  "total_budget",
+  "actual_cost",
+  "project_manager",
+  "client_name",
+  "client_contact",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "project_scope",
+   "fieldtype": "Text",
+   "label": "Project Scope"
+  },
+  {
+   "fieldname": "building_type",
+   "fieldtype": "Select",
+   "label": "Building Type",
+   "options": "\nVilla\nApartment Building\nCommercial Building\nIndustrial Building\nHospital\nSchool\nOther"
+  },
+  {
+   "fieldname": "site_location",
+   "fieldtype": "Data",
+   "label": "Site Location"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "construction_stages_section",
+   "fieldtype": "Section Break",
+   "label": "Construction Stages"
+  },
+  {
+   "fieldname": "construction_stages",
+   "fieldtype": "Table",
+   "label": "Construction Stages",
+   "options": "Construction Stage"
+  },
+  {
+   "fieldname": "project_status",
+   "fieldtype": "Select",
+   "label": "Project Status",
+   "options": "Planning\nIn Progress\nOn Hold\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "expected_end_date",
+   "fieldtype": "Date",
+   "label": "Expected End Date"
+  },
+  {
+   "fieldname": "actual_end_date",
+   "fieldtype": "Date",
+   "label": "Actual End Date"
+  },
+  {
+   "fieldname": "total_budget",
+   "fieldtype": "Currency",
+   "label": "Total Budget"
+  },
+  {
+   "fieldname": "actual_cost",
+   "fieldtype": "Currency",
+   "label": "Actual Cost"
+  },
+  {
+   "fieldname": "project_manager",
+   "fieldtype": "Link",
+   "label": "Project Manager",
+   "options": "User"
+  },
+  {
+   "fieldname": "client_name",
+   "fieldtype": "Link",
+   "label": "Client Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "client_contact",
+   "fieldtype": "Link",
+   "label": "Client Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Construction Project",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-15 10:00:00",
+ "modified_by": "Administrator",
+ "module": "Construction Management",
+ "name": "Construction Project",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
