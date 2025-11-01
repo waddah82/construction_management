@@ -1,0 +1,434 @@
+[
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": "\r\n\r\nfrappe.query_reports[\"Project_Calc_FMR\"] = {\r\n    \"filters\": [\r\n        {\r\n            fieldname: \"project\",\r\n            label: __(\"Project\"),\r\n            fieldtype: \"Link\",\r\n            options: \"Project\"\r\n        },\r\n        {\r\n            fieldname: \"from_date\",\r\n            label: __(\"From Date\"),\r\n            fieldtype: \"Date\",\r\n            \"default\": frappe.datetime.add_months(frappe.datetime.get_today(), -1),\r\n            reqd: 1\r\n        },\r\n        {\r\n            fieldname: \"to_date\",\r\n            label: __(\"To Date\"),\r\n            fieldtype: \"Date\",\r\n            \"default\": frappe.datetime.get_today(),\r\n            reqd: 1\r\n        },\r\n        {\r\n            fieldname: \"Company\",\r\n            label: __(\"Company\"),\r\n            fieldtype: \"Link\",\r\n            options: \"Company\"\r\n        },\r\n        {\r\n            fieldname: \"party_name\",\r\n            label: __(\"Party Name\"),\r\n            fieldtype: \"Data\",\r\n            hidden: 1\r\n        },\r\n        {\r\n            fieldname: \"tax_id\",\r\n            label: __(\"Tax Id\"),\r\n            fieldtype: \"Data\",\r\n            hidden: 1\r\n        },\r\n       \r\n        {\r\n            \"fieldname\": \"use_transaction_currency\",\r\n            \"label\": \"عرض بالعملة\",\r\n            \"fieldtype\": \"Check\",\r\n            \"default\": 0\r\n        },\r\n        {\r\n            \"fieldname\": \"currency\",\r\n            \"label\": \"currency\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": [\"SAR\", \"YER\", \"USD\", \" \"]\r\n        }\r\n    ]\r\n};    \r\n\r\n\r\n\r\n",
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-10-23 00:14:03.497589",
+  "module": "Stock",
+  "name": "Project_Calc_FMR",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Material Request",
+  "reference_report": null,
+  "report_name": "Project_Calc_FMR",
+  "report_script": "from_date = filters.get(\"from_date\")\r\nto_date = filters.get(\"to_date\")\r\nproject = filters.get(\"project\")\r\nitem_code = filters.get(\"item_code\")\r\nstatus = filters.get(\"status\")\r\ncompany = filters.get(\"company\")\r\n\r\ncolumns = [\r\n    {\"label\": \"التاريخ\", \"fieldname\": \"transaction_date\", \"fieldtype\": \"Date\", \"width\": 120},\r\n    {\"label\": \"رقم طلب المواد\", \"fieldname\": \"material_request\", \"fieldtype\": \"Link\", \"options\": \"Material Request\", \"width\": 140},\r\n    {\"label\": \"المشروع\", \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n    {\"label\": \"كود الصنف\", \"fieldname\": \"item_code\", \"fieldtype\": \"Link\", \"options\": \"Item\", \"width\": 120},\r\n    {\"label\": \"اسم الصنف\", \"fieldname\": \"item_name\", \"fieldtype\": \"Data\", \"width\": 200},\r\n    {\"label\": \"الكمية\", \"fieldname\": \"qty\", \"fieldtype\": \"Float\", \"width\": 100},\r\n    {\"label\": \"السعر\", \"fieldname\": \"rate\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n    {\"label\": \"القيمة\", \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n]\r\n\r\nresult = frappe.db.sql(\"\"\"\r\n    SELECT \r\n        mr.transaction_date as transaction_date,\r\n        mr.name as material_request,\r\n        mri.item_code as item_code,\r\n        mri.item_name as item_name,\r\n        mri.qty as qty,\r\n        mri.rate as rate,\r\n        mri.amount as amount\r\n    FROM `tabMaterial Request` mr\r\n    INNER JOIN `tabMaterial Request Item` mri ON mr.name = mri.parent\r\n    WHERE mr.docstatus < 2\r\n      AND mr.transaction_date BETWEEN %s AND %s\r\n      AND (%s IS NULL OR mri.item_code = %s)\r\n      AND (%s IS NULL OR mr.status = %s)\r\n      AND (%s IS NULL OR mr.company = %s)\r\n    ORDER BY mr.transaction_date DESC, mr.name\r\n\"\"\", (from_date, to_date, item_code, item_code, status, status, company, company), as_dict=True)\r\n\r\ntotal_qty = 0\r\ntotal_amount = 0\r\n\r\nfor row in result:\r\n    total_qty = total_qty + (row.get(\"qty\") or 0)\r\n    total_amount = total_amount + (row.get(\"amount\") or 0)\r\n\r\nif result:\r\n    result.append({\r\n        \"transaction_date\": \"\",\r\n        \"material_request\": \"المجموع\",\r\n        \"project\": \"\",\r\n        \"item_code\": \"\",\r\n        \"item_name\": \"\",\r\n        \"qty\": total_qty,\r\n        \"rate\": \"\",\r\n        \"amount\": total_amount,\r\n        \"is_total\": True\r\n    })\r\n\r\n\r\n\r\ndata = columns, result",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Project_Calc_FMR",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "Project_Calc_FMR",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Project_Calc_FMR",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Project_Calc_FMR",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   }
+  ]
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": "\r\nfrappe.query_reports[\"Project_Calc_FMRQ\"] = {\r\n    \"filters\": [\r\n        {\"fieldname\": \"from_date\", \"label\": \"من تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1, \"default\": frappe.datetime.add_months(frappe.datetime.get_today(), -12) },\r\n        {\"fieldname\": \"to_date\", \"label\": \"إلى تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1, \"default\": frappe.datetime.get_today() },\r\n        {\"fieldname\": \"material_request\", \"label\": \"طلب المواد\", \"fieldtype\": \"Link\", \"options\": \"Material Request\"},\r\n        {\"fieldname\": \"project\", \"label\": \"المشروع\", \"fieldtype\": \"Link\", \"options\": \"Project\"},\r\n        {\"fieldname\": \"task\", \"label\": \"المهمة\", \"fieldtype\": \"Link\", \"options\": \"Task\"},\r\n        {\"fieldname\": \"item_code\", \"label\": \"كود الصنف\", \"fieldtype\": \"Link\", \"options\": \"Item\"},\r\n        {\"fieldname\": \"status\", \"label\": \"الحالة\", \"fieldtype\": \"Select\", \"options\": \"\\nDraft\\nSubmitted\\nStopped\\nCancelled\"},\r\n        {\"fieldname\": \"company\", \"label\": \"الشركة\", \"fieldtype\": \"Link\", \"options\": \"Company\"},\r\n        {\r\n            \"fieldname\": \"group_by\",\r\n            \"label\": \"طريقة العرض\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Detail\\nGrouped\",\r\n            \"default\": \"Detail\"\r\n        }\r\n    ]\r\n};\r\n\r\n",
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-10-24 21:13:17.966913",
+  "module": "Stock",
+  "name": "Project_Calc_FMRQ",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Material Request",
+  "reference_report": null,
+  "report_name": "Project_Calc_FMRQ",
+  "report_script": "from_date = filters.get(\"from_date\")\r\nto_date = filters.get(\"to_date\")\r\nproject = filters.get(\"project\")\r\ntask = filters.get(\"task\")  # ✅ فلتر المهمة\r\nitem_code = filters.get(\"item_code\")\r\nstatus = filters.get(\"status\")\r\ncompany = filters.get(\"company\")\r\nmaterial_request = filters.get(\"material_request\")  # ✅ فلتر رقم الطلب\r\ngroup_by = filters.get(\"group_by\") or \"Detail\"  # ✅ فلتر التجميع\r\n\r\ncolumns = [\r\n    {\"label\": \"التاريخ\", \"fieldname\": \"transaction_date\", \"fieldtype\": \"Date\", \"width\": 120},\r\n    {\"label\": \"رقم طلب المواد\", \"fieldname\": \"material_request\", \"fieldtype\": \"Link\", \"options\": \"Material Request\", \"width\": 140},\r\n    {\"label\": \"المشروع\", \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n    {\"label\": \"المهمة\", \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n    {\"label\": \"كود الصنف\", \"fieldname\": \"item_code\", \"fieldtype\": \"Link\", \"options\": \"Item\", \"width\": 120},\r\n    {\"label\": \"اسم الصنف\", \"fieldname\": \"item_name\", \"fieldtype\": \"Data\", \"width\": 200},\r\n    {\"label\": \"الكمية\", \"fieldname\": \"qty\", \"fieldtype\": \"Float\", \"width\": 120},\r\n    {\"label\": \"السعر\", \"fieldname\": \"rate\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n    {\"label\": \"القيمة\", \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n]\r\n\r\n# ✅ إذا اختار المستخدم \"Grouped\" سنجمع النتائج\r\nif group_by == \"Grouped\":\r\n    query = \"\"\"\r\n        SELECT\r\n            mri.item_code AS item_code,\r\n            mri.item_name AS item_name,\r\n            mri.project AS project,\r\n            mri.task AS task,\r\n            SUM(mri.qty) AS qty,\r\n            AVG(mri.rate) AS rate,\r\n            SUM(mri.amount) AS amount\r\n        FROM `tabMaterial Request` mr\r\n        INNER JOIN `tabMaterial Request Item` mri ON mr.name = mri.parent\r\n        WHERE mr.docstatus < 2\r\n          AND mr.transaction_date BETWEEN %s AND %s\r\n          AND (%s IS NULL OR mri.item_code = %s)\r\n          AND (%s IS NULL OR mr.status = %s)\r\n          AND (%s IS NULL OR mr.company = %s)\r\n          AND (%s IS NULL OR mr.name = %s)\r\n          AND (%s IS NULL OR mri.project = %s)\r\n          AND (%s IS NULL OR mri.task = %s)\r\n        GROUP BY mri.item_code, mri.task, mri.project\r\n        ORDER BY mri.project, mri.task, mri.item_code\r\n    \"\"\"\r\nelse:\r\n    query = \"\"\"\r\n        SELECT \r\n            mr.transaction_date AS transaction_date,\r\n            mr.name AS material_request,\r\n            mri.project AS project,\r\n            mri.task AS task,\r\n            mri.item_code AS item_code,\r\n            mri.item_name AS item_name,\r\n            mri.qty AS qty,\r\n            mri.rate AS rate,\r\n            mri.amount AS amount\r\n        FROM `tabMaterial Request` mr\r\n        INNER JOIN `tabMaterial Request Item` mri ON mr.name = mri.parent\r\n        WHERE mr.docstatus < 2\r\n          AND mr.transaction_date BETWEEN %s AND %s\r\n          AND (%s IS NULL OR mri.item_code = %s)\r\n          AND (%s IS NULL OR mr.status = %s)\r\n          AND (%s IS NULL OR mr.company = %s)\r\n          AND (%s IS NULL OR mr.name = %s)\r\n          AND (%s IS NULL OR mri.project = %s)\r\n          AND (%s IS NULL OR mri.task = %s)\r\n        ORDER BY mr.transaction_date DESC, mr.name\r\n    \"\"\"\r\n\r\nresult = frappe.db.sql(query, (\r\n    from_date, to_date,\r\n    item_code, item_code,\r\n    status, status,\r\n    company, company,\r\n    material_request, material_request,\r\n    project, project,\r\n    task, task\r\n), as_dict=True)\r\n\r\n\r\ntotal_qty = 0\r\ntotal_amount = 0\r\n\r\nfor row in result:\r\n    total_qty = total_qty + (row.get(\"qty\") or 0)\r\n    total_amount = total_amount + (row.get(\"amount\") or 0)\r\n\r\nif result:\r\n    result.append({\r\n        \"transaction_date\": \"\",\r\n        \"material_request\": \"المجموع\",\r\n        \"project\": \"\",\r\n        \"item_code\": \"\",\r\n        \"item_name\": \"\",\r\n        \"qty\": total_qty,\r\n        \"rate\": \"\",\r\n        \"amount\": total_amount,\r\n        \"is_total\": True\r\n    })\r\n\r\n\r\n\r\ndata = columns, result\r\n",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Project_Calc_FMRQ",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "Project_Calc_FMRQ",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Project_Calc_FMRQ",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Project_Calc_FMRQ",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   }
+  ]
+ },
+ {
+  "add_total_row": 1,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": "\r\nfrappe.query_reports[\"Project_Calc_FTMQrrr\"] = {\r\n    \"filters\": [\r\n        {\"fieldname\": \"from_date\", \"label\": \"من تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 0},\r\n        {\"fieldname\": \"to_date\", \"label\": \"إلى تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 0},\r\n        {\"fieldname\": \"project\", \"label\": \"المشروع\", \"fieldtype\": \"Link\", \"options\": \"Project\"},\r\n        {\"fieldname\": \"task\", \"label\": \"المهمة\", \"fieldtype\": \"Link\", \"options\": \"Task\"},\r\n        {\"fieldname\": \"employee\", \"label\": \"الموظف\", \"fieldtype\": \"Link\", \"options\": \"Employee\"},\r\n        {\"fieldname\": \"company\", \"label\": \"الشركة\", \"fieldtype\": \"Link\", \"options\": \"Company\"},\r\n        {\r\n            \"fieldname\": \"amount_type\",\r\n            \"label\": \"نوع السعر\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Billing\\nCosting\",\r\n            \"default\": \"Billing\"\r\n        },\r\n        {\r\n            \"fieldname\": \"group_by\",\r\n            \"label\": \"طريقة العرض\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Detail\\nGrouped\",\r\n            \"default\": \"Detail\"\r\n        }\r\n    ]\r\n};\r\n   \r\n   \r\nfrappe.query_reports[\"Project_Calc_FTMQ\"] = {\r\n    \"filters\": [\r\n        {\"fieldname\": \"from_date\", \"label\": \"من تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1, \"default\": frappe.datetime.add_months(frappe.datetime.get_today(), -12) },\r\n        {\"fieldname\": \"to_date\", \"label\": \"إلى تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1, \"default\": frappe.datetime.get_today() },\r\n        {\"fieldname\": \"project\", \"label\": \"المشروع\", \"fieldtype\": \"Link\", \"options\": \"Project\"},\r\n        {\"fieldname\": \"task\", \"label\": \"المهمة\", \"fieldtype\": \"Link\", \"options\": \"Task\"},\r\n        {\"fieldname\": \"employee\", \"label\": \"الموظف\", \"fieldtype\": \"Link\", \"options\": \"Employee\"},\r\n        {\"fieldname\": \"company\", \"label\": \"الشركة\", \"fieldtype\": \"Link\", \"options\": \"Company\"},\r\n        {\"fieldname\": \"status\", \"label\": \"الحالة\", \"fieldtype\": \"Select\", \"options\": \"\\nDraft\\nSubmitted\\nStopped\\nCancelled\"},\r\n        {\r\n            \"fieldname\": \"amount_type\",\r\n            \"label\": \"نوع السعر\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Billing\\nCosting\",\r\n            \"default\": \"Billing\"\r\n        },\r\n        {\r\n            \"fieldname\": \"group_by\",\r\n            \"label\": \"طريقة العرض\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Detail\\nGrouped\",\r\n            \"default\": \"Detail\"\r\n        }\r\n    ]\r\n};",
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-10-24 21:09:27.875742",
+  "module": "Stock",
+  "name": "Project_Calc_FTMQ",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Material Request",
+  "reference_report": null,
+  "report_name": "Project_Calc_FTMQ",
+  "report_script": "#from frappe import _\r\n\r\ndef execute1(filters=None):\r\n    if not filters:\r\n        filters = {}\r\n\r\n    from_date = filters.get(\"from_date\")\r\n    to_date = filters.get(\"to_date\")\r\n    project = filters.get(\"project\")\r\n    task = filters.get(\"task\")\r\n    employee = filters.get(\"employee\")\r\n    company = filters.get(\"company\")\r\n    group_by = filters.get(\"group_by\") or \"Detail\"\r\n    amount_type = filters.get(\"amount_type\") or \"Billing\"  # 🔹 فلتر جديد\r\n\r\n    # اختيار الحقول بناءً على الفلتر\r\n    if amount_type == \"Costing\":\r\n        rate_field = \"te.costing_rate\"\r\n        amount_field = \"te.costing_amount\"\r\n    else:\r\n        rate_field = \"te.billing_rate\"\r\n        amount_field = \"te.billing_amount\"\r\n\r\n    columns = [\r\n        {\"label\": _(\"تاريخ البدء\"), \"fieldname\": \"from_time\", \"fieldtype\": \"Datetime\", \"width\": 150},\r\n        {\"label\": _(\"تاريخ الانتهاء\"), \"fieldname\": \"to_time\", \"fieldtype\": \"Datetime\", \"width\": 150},\r\n        {\"label\": _(\"رقم التايم شيت\"), \"fieldname\": \"timesheet\", \"fieldtype\": \"Link\", \"options\": \"Timesheet\", \"width\": 140},\r\n        {\"label\": _(\"الموظف\"), \"fieldname\": \"employee\", \"fieldtype\": \"Link\", \"options\": \"Employee\", \"width\": 120},\r\n        {\"label\": _(\"المشروع\"), \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n        {\"label\": _(\"المهمة\"), \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n        {\"label\": _(\"عدد الساعات\"), \"fieldname\": \"hours\", \"fieldtype\": \"Float\", \"width\": 120},\r\n        {\"label\": _(\"السعر/ساعة\"), \"fieldname\": \"rate\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": _(\"الإجمالي\"), \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n    ]\r\n    if group_by == \"Grouped\":\r\n        columns = [\r\n            {\"label\": _(\"المشروع\"), \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n            {\"label\": _(\"المهمة\"), \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n            {\"label\": _(\"عدد الساعات\"), \"fieldname\": \"hours\", \"fieldtype\": \"Float\", \"width\": 120},\r\n            {\"label\": _(\"الإجمالي\"), \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        ]\r\n\r\n    if group_by == \"Grouped\":\r\n        query = f\"\"\"\r\n            SELECT\r\n                te.project AS project,\r\n                COALESCE(te.task, 'بدون مهمة') AS task,\r\n                SUM(te.hours) AS hours,\r\n                AVG({rate_field}) AS rate,\r\n                SUM({amount_field}) AS amount\r\n            FROM `tabTimesheet` t\r\n            INNER JOIN `tabTimesheet Detail` te ON t.name = te.parent\r\n            WHERE t.docstatus = 1\r\n              AND te.from_time BETWEEN %s AND %s\r\n              AND (%s IS NULL OR te.project = %s)\r\n              AND (%s IS NULL OR te.task = %s)\r\n              AND (%s IS NULL OR t.employee = %s)\r\n              AND (%s IS NULL OR t.company = %s)\r\n            GROUP BY te.project, te.task\r\n            ORDER BY te.project, te.task\r\n        \"\"\"\r\n    else:\r\n        query = f\"\"\"\r\n            SELECT\r\n                te.from_time,\r\n                te.to_time,\r\n                t.name AS timesheet,\r\n                t.employee,\r\n                te.project,\r\n                te.task,\r\n                te.hours,\r\n                {rate_field} AS rate,\r\n                {amount_field} AS amount\r\n            FROM `tabTimesheet` t\r\n            INNER JOIN `tabTimesheet Detail` te ON t.name = te.parent\r\n            WHERE t.docstatus = 1\r\n              AND te.from_time BETWEEN %s AND %s\r\n              AND (%s IS NULL OR te.project = %s)\r\n              AND (%s IS NULL OR te.task = %s)\r\n              AND (%s IS NULL OR t.employee = %s)\r\n              AND (%s IS NULL OR t.company = %s)\r\n            ORDER BY te.from_time DESC\r\n        \"\"\"\r\n\r\n    data = frappe.db.sql(\r\n        query,\r\n        (from_date, to_date, project, project, task, task, employee, employee, company, company),\r\n        as_dict=True,\r\n    )\r\n\r\n    return columns, data\r\ndef execute(filters=None):\r\n    if not filters:\r\n        filters = {}\r\n\r\n    from_date = filters.get(\"from_date\")\r\n    to_date = filters.get(\"to_date\")\r\n    project = filters.get(\"project\")\r\n    task = filters.get(\"task\")\r\n    employee = filters.get(\"employee\")\r\n    company = filters.get(\"company\")\r\n    status = filters.get(\"status\")\r\n    group_by = filters.get(\"group_by\") or \"Detail\"\r\n    amount_type = filters.get(\"amount_type\") or \"Billing\"  # 🔹 فلتر جديد\r\n\r\n    # اختيار الحقول بناءً على الفلتر\r\n    if amount_type == \"Costing\":\r\n        rate_field = \"te.costing_rate\"\r\n        amount_field = \"te.costing_amount\"\r\n    else:\r\n        rate_field = \"te.billing_rate\"\r\n        amount_field = \"te.billing_amount\"\r\n\r\n    columns = [\r\n        {\"label\": _(\"تاريخ البدء\"), \"fieldname\": \"from_time\", \"fieldtype\": \"Datetime\", \"width\": 150},\r\n        {\"label\": _(\"تاريخ الانتهاء\"), \"fieldname\": \"to_time\", \"fieldtype\": \"Datetime\", \"width\": 150},\r\n        {\"label\": _(\"رقم التايم شيت\"), \"fieldname\": \"timesheet\", \"fieldtype\": \"Link\", \"options\": \"Timesheet\", \"width\": 140},\r\n        {\"label\": _(\"الموظف\"), \"fieldname\": \"employee\", \"fieldtype\": \"Link\", \"options\": \"Employee\", \"width\": 120},\r\n        {\"label\": _(\"المشروع\"), \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n        {\"label\": _(\"المهمة\"), \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n        {\"label\": _(\"عدد الساعات\"), \"fieldname\": \"hours\", \"fieldtype\": \"Float\", \"width\": 120},\r\n        {\"label\": _(\"السعر/ساعة\"), \"fieldname\": \"rate\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": _(\"الإجمالي\"), \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n    ]\r\n    if group_by == \"Grouped\":\r\n        columns = [\r\n            {\"label\": _(\"المشروع\"), \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n            {\"label\": _(\"المهمة\"), \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n            {\"label\": _(\"عدد الساعات\"), \"fieldname\": \"hours\", \"fieldtype\": \"Float\", \"width\": 120},\r\n            {\"label\": _(\"الإجمالي\"), \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        ]\r\n\r\n    if group_by == \"Grouped\":\r\n        query = f\"\"\"\r\n            SELECT\r\n                te.project AS project,\r\n                COALESCE(te.task, 'بدون مهمة') AS task,\r\n                SUM(te.hours) AS hours,\r\n                AVG({rate_field}) AS rate,\r\n                SUM({amount_field}) AS amount\r\n            FROM `tabTimesheet` t\r\n            INNER JOIN `tabTimesheet Detail` te ON t.name = te.parent\r\n            WHERE t.docstatus < 3\r\n              AND te.from_time BETWEEN %s AND %s\r\n              AND (%s IS NULL OR te.project = %s)\r\n              AND (%s IS NULL OR te.task = %s)\r\n              AND (%s IS NULL OR t.employee = %s)\r\n              AND (%s IS NULL OR t.company = %s)\r\n              AND (%s IS NULL OR t.status = %s)\r\n            GROUP BY te.project, te.task\r\n            ORDER BY te.project, te.task\r\n        \"\"\"\r\n    else:\r\n        query = f\"\"\"\r\n            SELECT\r\n                te.from_time,\r\n                te.to_time,\r\n                t.name AS timesheet,\r\n                t.employee,\r\n                te.project,\r\n                te.task,\r\n                te.hours,\r\n                {rate_field} AS rate,\r\n                {amount_field} AS amount\r\n            FROM `tabTimesheet` t\r\n            INNER JOIN `tabTimesheet Detail` te ON t.name = te.parent\r\n            WHERE t.docstatus < 3\r\n              AND te.from_time BETWEEN %s AND %s\r\n              AND (%s IS NULL OR te.project = %s)\r\n              AND (%s IS NULL OR te.task = %s)\r\n              AND (%s IS NULL OR t.employee = %s)\r\n              AND (%s IS NULL OR t.company = %s)\r\n              AND (%s IS NULL OR t.status = %s)\r\n            ORDER BY te.from_time DESC\r\n        \"\"\"\r\n\r\n    data = frappe.db.sql(\r\n        query,\r\n        (from_date, to_date, project, project, task, task, employee, employee, company, company, status, status),\r\n        as_dict=True,\r\n    )\r\n\r\n    return columns, data\r\n\r\n\r\n\r\ndata =execute(filters)\r\n",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Project_Calc_FTMQ",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "Project_Calc_FTMQ",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Project_Calc_FTMQ",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Project_Calc_FTMQ",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   }
+  ]
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": "\r\nfrappe.query_reports[\"Project_Calc_FECQ\"] = {\r\n   \"filters\": [\r\n        {\"fieldname\": \"from_date\", \"label\": \"من تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1},\r\n        {\"fieldname\": \"to_date\", \"label\": \"إلى تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1},\r\n        {\"fieldname\": \"project\", \"label\": \"المشروع\", \"fieldtype\": \"Link\", \"options\": \"Project\"},\r\n        {\"fieldname\": \"task\", \"label\": \"المهمة\", \"fieldtype\": \"Link\", \"options\": \"Task\"},\r\n        {\"fieldname\": \"employee\", \"label\": \"الموظف\", \"fieldtype\": \"Link\", \"options\": \"Employee\"},\r\n        {\"fieldname\": \"company\", \"label\": \"الشركة\", \"fieldtype\": \"Link\", \"options\": \"Company\"},\r\n        {\r\n            \"fieldname\": \"group_by\",\r\n            \"label\": \"طريقة العرض\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Detail\\nGrouped\",\r\n            \"default\": \"Detail\"\r\n        }\r\n    ]\r\n};\r\n",
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-10-23 00:57:00.622613",
+  "module": "Stock",
+  "name": "Project_Calc_FECQ",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Material Request",
+  "reference_report": null,
+  "report_name": "Project_Calc_FECQ",
+  "report_script": "#from frappe import _\r\n\r\ndef execute(filters=None):\r\n    if not filters:\r\n        filters = {}\r\n\r\n    from_date = filters.get(\"from_date\")\r\n    to_date = filters.get(\"to_date\")\r\n    project = filters.get(\"project\")\r\n    task = filters.get(\"task\")\r\n    employee = filters.get(\"employee\")\r\n    company = filters.get(\"company\")\r\n    group_by = filters.get(\"group_by\") or \"Detail\"\r\n\r\n    columns = [\r\n        {\"label\": _(\"التاريخ\"), \"fieldname\": \"posting_date\", \"fieldtype\": \"Date\", \"width\": 120},\r\n        {\"label\": _(\"رقم الطلب\"), \"fieldname\": \"expense_claim\", \"fieldtype\": \"Link\", \"options\": \"Expense Claim\", \"width\": 140},\r\n        {\"label\": _(\"الموظف\"), \"fieldname\": \"employee\", \"fieldtype\": \"Link\", \"options\": \"Employee\", \"width\": 120},\r\n        {\"label\": _(\"المشروع\"), \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n        {\"label\": _(\"المهمة\"), \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n        {\"label\": _(\"البند\"), \"fieldname\": \"expense_type\", \"fieldtype\": \"Data\", \"width\": 140},\r\n        {\"label\": _(\"المبلغ\"), \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n    ]\r\n\r\n    if group_by == \"Grouped\":\r\n        query = \"\"\"\r\n            SELECT\r\n                e.project AS project,\r\n                COALESCE(ed.task, 'بدون مهمة') AS task,\r\n                SUM(ed.amount) AS amount\r\n            FROM `tabExpense Claim` e\r\n            INNER JOIN `tabExpense Claim Detail` ed ON e.name = ed.parent\r\n            WHERE e.docstatus = 1\r\n              AND e.posting_date BETWEEN %s AND %s\r\n              AND (%s IS NULL OR e.project = %s)\r\n              AND (%s IS NULL OR ed.task = %s)\r\n              AND (%s IS NULL OR e.employee = %s)\r\n              AND (%s IS NULL OR e.company = %s)\r\n            GROUP BY e.project, ed.task\r\n            ORDER BY e.project, ed.task\r\n        \"\"\"\r\n    else:\r\n        query = \"\"\"\r\n            SELECT\r\n                e.posting_date,\r\n                e.name AS expense_claim,\r\n                e.employee,\r\n                e.project,\r\n                ed.task,\r\n                ed.expense_type,\r\n                ed.amount\r\n            FROM `tabExpense Claim` e\r\n            INNER JOIN `tabExpense Claim Detail` ed ON e.name = ed.parent\r\n            WHERE e.docstatus = 1\r\n              AND e.posting_date BETWEEN %s AND %s\r\n              AND (%s IS NULL OR e.project = %s)\r\n              AND (%s IS NULL OR ed.task = %s)\r\n              AND (%s IS NULL OR e.employee = %s)\r\n              AND (%s IS NULL OR e.company = %s)\r\n            ORDER BY e.posting_date DESC\r\n        \"\"\"\r\n\r\n    data = frappe.db.sql(\r\n        query,\r\n        (from_date, to_date, project, project, task, task, employee, employee, company, company),\r\n        as_dict=True,\r\n    )\r\n\r\n    return columns, data\r\n\r\ndata =execute(filters)\r\n",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Project_Calc_FECQ",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "Project_Calc_FECQ",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Project_Calc_FECQ",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Project_Calc_FECQ",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   }
+  ]
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": "\r\nfrappe.query_reports[\"Project_Calc_FECQ1\"] = {\r\n    filters: [\r\n        { \"fieldname\": \"from_date\", \"label\": \"من تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1, \"default\": frappe.datetime.add_months(frappe.datetime.get_today(), -12) },\r\n        { \"fieldname\": \"to_date\", \"label\": \"إلى تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1, \"default\": frappe.datetime.get_today() },\r\n        { \"fieldname\": \"project\", \"label\": \"المشروع\", \"fieldtype\": \"Link\", \"options\": \"Project\" },\r\n        { \"fieldname\": \"task\", \"label\": \"المهمة\", \"fieldtype\": \"Link\", \"options\": \"Task\" },\r\n        { \"fieldname\": \"employee\", \"label\": \"الموظف\", \"fieldtype\": \"Link\", \"options\": \"Employee\" },\r\n        { \"fieldname\": \"company\", \"label\": \"الشركة\", \"fieldtype\": \"Link\", \"options\": \"Company\" },\r\n        {\"fieldname\": \"status\", \"label\": \"الحالة\", \"fieldtype\": \"Select\", \"options\": \"\\nDraft\\nPaid\\nUnpaid\\nStopped\\nCancelled\"},\r\n        {\r\n            \"fieldname\": \"amount_type\",\r\n            \"label\": \"نوع السعر\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Billing\\nCosting\",\r\n            \"default\": \"Billing\"\r\n        },\r\n        {\r\n            \"fieldname\": \"group_by\",\r\n            \"label\": \"طريقة العرض\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Detail\\nGrouped\",\r\n            \"default\": \"Detail\"\r\n        },\r\n    ]\r\n};\r\n",
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-10-24 20:49:42.637281",
+  "module": "Stock",
+  "name": "Project_Calc_FECQ1",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Material Request",
+  "reference_report": null,
+  "report_name": "Project_Calc_FECQ1",
+  "report_script": "#from frappe import _\r\n\r\ndef execute(filters=None):\r\n    if not filters:\r\n        filters = {}\r\n\r\n    from_date = filters.get(\"from_date\")\r\n    to_date = filters.get(\"to_date\")\r\n    project = filters.get(\"project\")\r\n    task = filters.get(\"task\")\r\n    employee = filters.get(\"employee\")\r\n    company = filters.get(\"company\")\r\n    status = filters.get(\"status\")\r\n    group_by = filters.get(\"group_by\") or \"Detail\"\r\n    amount_type = filters.get(\"amount_type\") or \"Billing\"  # 🔹 فلتر جديد\r\n\r\n    # في Expense Claim عادة يوجد حقلين:\r\n    # - sanction_amount → المبلغ المعتمد (Costing)\r\n    # - claim_amount → المبلغ المطلوب (Billing)\r\n    # نختار حسب الفلتر\r\n    if amount_type == \"Costing\":\r\n        amount_field = \"eci.sanctioned_amount\"\r\n    else:\r\n        amount_field = \"eci.amount\"\r\n\r\n    columns = [\r\n        {\"label\": _(\"التاريخ\"), \"fieldname\": \"expense_date\", \"fieldtype\": \"Date\", \"width\": 120},\r\n        {\"label\": _(\"رقم الطلب\"), \"fieldname\": \"expense_claim\", \"fieldtype\": \"Link\", \"options\": \"Expense Claim\", \"width\": 150},\r\n        {\"label\": _(\"الموظف\"), \"fieldname\": \"employee\", \"fieldtype\": \"Link\", \"options\": \"Employee\", \"width\": 120},\r\n        {\"label\": _(\"المشروع\"), \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n        {\"label\": _(\"المهمة\"), \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n        {\"label\": _(\"البند\"), \"fieldname\": \"expense_type\", \"fieldtype\": \"Data\", \"width\": 150},\r\n        {\"label\": _(\"المبلغ\"), \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n    ]\r\n    if group_by == \"Grouped\":\r\n        columns = [\r\n            {\"label\": _(\"المشروع\"), \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n            {\"label\": _(\"المهمة\"), \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n            {\"label\": _(\"المبلغ\"), \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        ]\r\n    if group_by == \"Grouped\":\r\n        query = f\"\"\"\r\n            SELECT\r\n                ec.project AS project,\r\n                COALESCE(eci.task, 'بدون مهمة') AS task,\r\n                SUM({amount_field}) AS amount\r\n            FROM `tabExpense Claim` ec\r\n            INNER JOIN `tabExpense Claim Detail` eci ON ec.name = eci.parent\r\n            WHERE ec.docstatus = 1\r\n              AND eci.expense_date BETWEEN %s AND %s\r\n              AND (%s IS NULL OR ec.project = %s)\r\n              AND (%s IS NULL OR eci.task = %s)\r\n              AND (%s IS NULL OR ec.employee = %s)\r\n              AND (%s IS NULL OR ec.company = %s)\r\n              AND (%s IS NULL OR ec.status = %s)\r\n            GROUP BY ec.project, eci.task\r\n            ORDER BY ec.project, eci.task\r\n        \"\"\"\r\n    else:\r\n        query = f\"\"\"\r\n            SELECT\r\n                eci.expense_date,\r\n                ec.name AS expense_claim,\r\n                ec.employee,\r\n                ec.project,\r\n                eci.task,\r\n                eci.expense_type,\r\n                {amount_field} AS amount\r\n            FROM `tabExpense Claim` ec\r\n            INNER JOIN `tabExpense Claim Detail` eci ON ec.name = eci.parent\r\n            WHERE ec.docstatus < 2\r\n              AND eci.expense_date BETWEEN %s AND %s\r\n              AND (%s IS NULL OR ec.project = %s)\r\n              AND (%s IS NULL OR eci.task = %s)\r\n              AND (%s IS NULL OR ec.employee = %s)\r\n              AND (%s IS NULL OR ec.company = %s)\r\n              AND (%s IS NULL OR ec.status = %s)\r\n            ORDER BY eci.expense_date DESC\r\n        \"\"\"\r\n\r\n    data = frappe.db.sql(\r\n        query,\r\n        (from_date, to_date, project, project, task, task, employee, employee, company, company, status, status),\r\n        as_dict=True,\r\n    )\r\n\r\n    return columns, data\r\n\r\n\r\ndata =execute(filters)\r\n",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Project_Calc_FECQ1",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "Project_Calc_FECQ1",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Project_Calc_FECQ1",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Project_Calc_FECQ1",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   }
+  ]
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": "\r\nfrappe.query_reports[\"Project_Calc\"] = {\r\n    filters: [\r\n        { \"fieldname\": \"from_date\", \"label\": \"من تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1 },\r\n        { \"fieldname\": \"to_date\", \"label\": \"إلى تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1 },\r\n        { \"fieldname\": \"project\", \"label\": \"المشروع\", \"fieldtype\": \"Link\", \"options\": \"Project\" },\r\n        { \"fieldname\": \"task\", \"label\": \"المهمة\", \"fieldtype\": \"Link\", \"options\": \"Task\" },\r\n        { \"fieldname\": \"employee\", \"label\": \"الموظف\", \"fieldtype\": \"Link\", \"options\": \"Employee\" },\r\n        { \"fieldname\": \"company\", \"label\": \"الشركة\", \"fieldtype\": \"Link\", \"options\": \"Company\" },\r\n        {\r\n            \"fieldname\": \"amount_type\",\r\n            \"label\": \"نوع السعر\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Billing\\nCosting\",\r\n            \"default\": \"Billing\"\r\n        },\r\n        {\r\n            \"fieldname\": \"group_by\",\r\n            \"label\": \"طريقة العرض\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Detail\\nGrouped\",\r\n            \"default\": \"Detail\"\r\n        },\r\n    ]\r\n};\r\n",
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-10-23 03:11:59.497401",
+  "module": "Stock",
+  "name": "Project_Calc",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Material Request",
+  "reference_report": null,
+  "report_name": "Project_Calc",
+  "report_script": "# -*- coding: utf-8 -*-\r\n#import frappe\r\n#from frappe import _\r\n\r\ndef execute(filters=None):\r\n    if not filters:\r\n        filters = {}\r\n\r\n    from_date = filters.get(\"from_date\") or frappe.utils.add_years(frappe.utils.today(), -1)\r\n    to_date = filters.get(\"to_date\") or frappe.utils.today()\r\n    project = filters.get(\"project\")\r\n    task = filters.get(\"task\")\r\n    group_by = filters.get(\"group_by\") or \"Detail\"  # 'Grouped' أو 'Detail'\r\n\r\n    # -------------------------\r\n    # 1️⃣ Material Request\r\n    # -------------------------\r\n    mr_query = \"\"\"\r\n        SELECT\r\n            mr.transaction_date AS date,\r\n            mr.name AS reference,\r\n            mri.project,\r\n            mri.task,\r\n            mri.item_code,\r\n            mri.item_name,\r\n            mri.qty,\r\n            mri.rate,\r\n            mri.amount,\r\n            'Material Request' AS type\r\n        FROM `tabMaterial Request` mr\r\n        INNER JOIN `tabMaterial Request Item` mri ON mr.name = mri.parent\r\n        WHERE mr.docstatus = 1\r\n          AND mr.transaction_date BETWEEN %s AND %s\r\n          AND (%s IS NULL OR mri.project=%s)\r\n          AND (%s IS NULL OR mri.task=%s)\r\n    \"\"\"\r\n    mr_data = frappe.db.sql(mr_query, (from_date, to_date, project, project, task, task), as_dict=True)\r\n\r\n    # -------------------------\r\n    # 2️⃣ Timesheet\r\n    # -------------------------\r\n    ts_query = \"\"\"\r\n        SELECT\r\n            te.from_time AS date,\r\n            t.name AS reference,\r\n            te.project,\r\n            te.task,\r\n            '' AS item_code,\r\n            '' AS item_name,\r\n            te.hours AS qty,\r\n            te.billing_rate AS rate,\r\n            te.billing_amount AS amount,\r\n            'Timesheet' AS type\r\n        FROM `tabTimesheet` t\r\n        INNER JOIN `tabTimesheet Detail` te ON t.name = te.parent\r\n        WHERE t.docstatus = 1\r\n          AND te.from_time BETWEEN %s AND %s\r\n          AND (%s IS NULL OR te.project=%s)\r\n          AND (%s IS NULL OR te.task=%s)\r\n    \"\"\"\r\n    ts_data = frappe.db.sql(ts_query, (from_date, to_date, project, project, task, task), as_dict=True)\r\n\r\n    # -------------------------\r\n    # 3️⃣ Expense Claim\r\n    # -------------------------\r\n    ec_query = \"\"\"\r\n        SELECT\r\n            eci.expense_date AS date,\r\n            ec.name AS reference,\r\n            ec.project,\r\n            eci.task,\r\n            '' AS item_code,\r\n            eci.expense_type AS item_name,\r\n            1 AS qty,\r\n            eci.amount AS rate,\r\n            eci.amount AS amount,\r\n            'Expense Claim' AS type\r\n        FROM `tabExpense Claim` ec\r\n        INNER JOIN `tabExpense Claim Detail` eci ON ec.name = eci.parent\r\n        WHERE ec.docstatus = 1\r\n          AND eci.expense_date BETWEEN %s AND %s\r\n          AND (%s IS NULL OR ec.project=%s)\r\n          AND (%s IS NULL OR eci.task=%s)\r\n    \"\"\"\r\n    ec_data = frappe.db.sql(ec_query, (from_date, to_date, project, project, task, task), as_dict=True)\r\n\r\n    # -------------------------\r\n    # دمج النتائج\r\n    # -------------------------\r\n    all_data = mr_data + ts_data + ec_data\r\n\r\n    # -------------------------\r\n    # الأعمدة الموحدة\r\n    # -------------------------\r\n    columns = [\r\n        {\"label\": _(\"التاريخ\"), \"fieldname\": \"date\", \"fieldtype\": \"Date\", \"width\": 120},\r\n        {\"label\": _(\"المرجع\"), \"fieldname\": \"reference\", \"fieldtype\": \"Data\", \"width\": 150},\r\n        {\"label\": _(\"المشروع\"), \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n        {\"label\": _(\"المهمة\"), \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n        {\"label\": _(\"كود الصنف / البند\"), \"fieldname\": \"item_code\", \"fieldtype\": \"Data\", \"width\": 120},\r\n        {\"label\": _(\"اسم الصنف / نوع المصروف\"), \"fieldname\": \"item_name\", \"fieldtype\": \"Data\", \"width\": 200},\r\n        {\"label\": _(\"الكمية / عدد الساعات\"), \"fieldname\": \"qty\", \"fieldtype\": \"Float\", \"width\": 120},\r\n        {\"label\": _(\"السعر / المبلغ\"), \"fieldname\": \"rate\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": _(\"القيمة\"), \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": _(\"نوع المعاملة\"), \"fieldname\": \"type\", \"fieldtype\": \"Data\", \"width\": 120},\r\n    ]\r\n\r\n    # -------------------------\r\n    # التجميع حسب Project/Task/Type\r\n    # -------------------------\r\n    if group_by == \"Grouped\":\r\n        grouped = {}\r\n        for d in all_data:\r\n            key = (d.get(\"project\") or \"بدون مشروع\", d.get(\"task\") or \"بدون مهمة\", d.get(\"type\"))\r\n            if key not in grouped:\r\n                grouped[key] = {\r\n                    \"project\": key[0],\r\n                    \"task\": key[1],\r\n                    \"type\": key[2],\r\n                    \"qty\": 0,\r\n                    \"amount\": 0,\r\n                }\r\n            grouped[key][\"qty\"] = grouped[key][\"qty\"] + d.get(\"qty\") or 0\r\n            grouped[key][\"amount\"] = grouped[key][\"amount\"] + d.get(\"amount\") or 0\r\n\r\n        # تحويل dict إلى list\r\n        data = []\r\n        total_qty = 0\r\n        total_amount = 0\r\n        for g in grouped.values():\r\n            data.append({\r\n                \"date\": \"\",\r\n                \"reference\": \"\",\r\n                \"project\": g[\"project\"],\r\n                \"task\": g[\"task\"],\r\n                \"item_code\": \"\",\r\n                \"item_name\": \"\",\r\n                \"qty\": g[\"qty\"],\r\n                \"rate\": \"\",\r\n                \"amount\": g[\"amount\"],\r\n                \"type\": g[\"type\"],\r\n            })\r\n            total_qty = total_qty + g[\"qty\"]\r\n            total_amount = total_amount +g[\"amount\"]\r\n\r\n        # المجموع الكلي في الأسفل\r\n        data.append({\r\n            \"date\": \"\",\r\n            \"reference\": _(\"المجموع الكلي\"),\r\n            \"project\": \"\",\r\n            \"task\": \"\",\r\n            \"item_code\": \"\",\r\n            \"item_name\": \"\",\r\n            \"qty\": total_qty,\r\n            \"rate\": \"\",\r\n            \"amount\": total_amount,\r\n            \"type\": \"\",\r\n        })\r\n    else:\r\n        data = all_data\r\n\r\n    return columns, data\r\ndata =execute(filters)",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Project_Calc",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "Project_Calc",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Project_Calc",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Project_Calc",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   }
+  ]
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": "\r\nfrappe.query_reports[\"Project_Calc1\"] = {\r\n    filters: [\r\n        { \"fieldname\": \"from_date\", \"label\": \"من تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1 },\r\n        { \"fieldname\": \"to_date\", \"label\": \"إلى تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1 },\r\n        { \"fieldname\": \"project\", \"label\": \"المشروع\", \"fieldtype\": \"Link\", \"options\": \"Project\" },\r\n        { \"fieldname\": \"task\", \"label\": \"المهمة\", \"fieldtype\": \"Link\", \"options\": \"Task\" },\r\n        { \"fieldname\": \"employee\", \"label\": \"الموظف\", \"fieldtype\": \"Link\", \"options\": \"Employee\" },\r\n        { \"fieldname\": \"company\", \"label\": \"الشركة\", \"fieldtype\": \"Link\", \"options\": \"Company\" },\r\n        {\r\n            \"fieldname\": \"amount_type\",\r\n            \"label\": \"نوع السعر\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Billing\\nCosting\",\r\n            \"default\": \"Billing\"\r\n        },\r\n        {\r\n            \"fieldname\": \"group_by\",\r\n            \"label\": \"طريقة العرض\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Detail\\nGrouped\",\r\n            \"default\": \"Detail\"\r\n        },\r\n    ]\r\n};\r\n",
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-10-23 03:28:47.072928",
+  "module": "Stock",
+  "name": "Project_Calc1",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Material Request",
+  "reference_report": null,
+  "report_name": "Project_Calc1",
+  "report_script": "# -*- coding: utf-8 -*-\r\n#import frappe\r\n#from frappe import _\r\n\r\ndef execute(filters=None):\r\n    if not filters:\r\n        filters = {}\r\n\r\n    from_date = filters.get(\"from_date\") or frappe.utils.add_years(frappe.utils.today(), -1)\r\n    to_date = filters.get(\"to_date\") or frappe.utils.today()\r\n    project = filters.get(\"project\")\r\n    task = filters.get(\"task\")\r\n    group_by = filters.get(\"group_by\") or \"Detail\"  # 'Grouped' أو 'Detail'\r\n\r\n    # -------------------------\r\n    # 1️⃣ Material Request\r\n    # -------------------------\r\n    mr_query = \"\"\"\r\n        SELECT\r\n            mr.transaction_date AS date,\r\n            mr.name AS reference,\r\n            mri.project,\r\n            mri.task,\r\n            mri.item_code,\r\n            mri.item_name,\r\n            mri.qty,\r\n            mri.rate,\r\n            mri.amount,\r\n            'Material Request' AS type\r\n        FROM `tabMaterial Request` mr\r\n        INNER JOIN `tabMaterial Request Item` mri ON mr.name = mri.parent\r\n        WHERE mr.docstatus =! 3\r\n          AND mr.transaction_date BETWEEN %s AND %s\r\n          AND (%s IS NULL OR mri.project=%s)\r\n          AND (%s IS NULL OR mri.task=%s)\r\n    \"\"\"\r\n    mr_data = frappe.db.sql(mr_query, (from_date, to_date, project, project, task, task), as_dict=True)\r\n\r\n    # -------------------------\r\n    # 2️⃣ Timesheet\r\n    # -------------------------\r\n    ts_query = \"\"\"\r\n        SELECT\r\n            te.from_time AS date,\r\n            t.name AS reference,\r\n            te.project,\r\n            te.task,\r\n            '' AS item_code,\r\n            '' AS item_name,\r\n            te.hours AS qty,\r\n            te.billing_rate AS rate,\r\n            te.billing_amount AS amount,\r\n            'Timesheet' AS type\r\n        FROM `tabTimesheet` t\r\n        INNER JOIN `tabTimesheet Detail` te ON t.name = te.parent\r\n        WHERE t.docstatus != 3\r\n          AND te.from_time BETWEEN %s AND %s\r\n          AND (%s IS NULL OR te.project=%s)\r\n          AND (%s IS NULL OR te.task=%s)\r\n    \"\"\"\r\n    ts_data = frappe.db.sql(ts_query, (from_date, to_date, project, project, task, task), as_dict=True)\r\n\r\n    # -------------------------\r\n    # 3️⃣ Expense Claim\r\n    # -------------------------\r\n    ec_query = \"\"\"\r\n        SELECT\r\n            eci.expense_date AS date,\r\n            ec.name AS reference,\r\n            ec.project,\r\n            eci.task,\r\n            '' AS item_code,\r\n            eci.expense_type AS item_name,\r\n            1 AS qty,\r\n            eci.amount AS rate,\r\n            eci.amount AS amount,\r\n            'Expense Claim' AS type\r\n        FROM `tabExpense Claim` ec\r\n        INNER JOIN `tabExpense Claim Detail` eci ON ec.name = eci.parent\r\n        WHERE ec.docstatus != 3\r\n          AND eci.expense_date BETWEEN %s AND %s\r\n          AND (%s IS NULL OR ec.project=%s)\r\n          AND (%s IS NULL OR eci.task=%s)\r\n    \"\"\"\r\n    ec_data = frappe.db.sql(ec_query, (from_date, to_date, project, project, task, task), as_dict=True)\r\n\r\n    # -------------------------\r\n    # دمج النتائج\r\n    # -------------------------\r\n    all_data = mr_data + ts_data + ec_data\r\n\r\n    # -------------------------\r\n    # الأعمدة الموحدة\r\n    # -------------------------\r\n    columns = [\r\n        {\"label\": _(\"التاريخ\"), \"fieldname\": \"date\", \"fieldtype\": \"Date\", \"width\": 120},\r\n        {\"label\": _(\"المرجع\"), \"fieldname\": \"reference\", \"fieldtype\": \"Data\", \"width\": 150},\r\n        {\"label\": _(\"المشروع\"), \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n        {\"label\": _(\"المهمة\"), \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n        {\"label\": _(\"كود الصنف / البند\"), \"fieldname\": \"item_code\", \"fieldtype\": \"Data\", \"width\": 120},\r\n        {\"label\": _(\"اسم الصنف / نوع المصروف\"), \"fieldname\": \"item_name\", \"fieldtype\": \"Data\", \"width\": 200},\r\n        {\"label\": _(\"الكمية / عدد الساعات\"), \"fieldname\": \"qty\", \"fieldtype\": \"Float\", \"width\": 120},\r\n        {\"label\": _(\"السعر / المبلغ\"), \"fieldname\": \"rate\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": _(\"القيمة\"), \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": _(\"نوع المعاملة\"), \"fieldname\": \"type\", \"fieldtype\": \"Data\", \"width\": 120},\r\n    ]\r\n\r\n    # -------------------------\r\n    # التجميع حسب Project/Task/Type\r\n    # -------------------------\r\n    if group_by == \"Grouped\":\r\n        grouped = {}\r\n        for d in all_data:\r\n            key = (d.get(\"project\") or \"بدون مشروع\", d.get(\"task\") or \"بدون مهمة\", d.get(\"type\"))\r\n            if key not in grouped:\r\n                grouped[key] = {\r\n                    \"project\": key[0],\r\n                    \"task\": key[1],\r\n                    \"type\": key[2],\r\n                    \"qty\": 0,\r\n                    \"amount\": 0,\r\n                }\r\n            grouped[key][\"qty\"] = grouped[key][\"qty\"] + d.get(\"qty\") or 0\r\n            grouped[key][\"amount\"] = grouped[key][\"amount\"] + d.get(\"amount\") or 0\r\n\r\n        # تحويل dict إلى list\r\n        data = []\r\n        totals_by_type = {}\r\n        for g in grouped.values():\r\n            t = g[\"type\"]\r\n            if t not in totals_by_type:\r\n                totals_by_type[t] = {\"qty\": 0, \"amount\": 0}\r\n            totals_by_type[t][\"qty\"] = totals_by_type[t][\"qty\"] + g[\"qty\"]\r\n            totals_by_type[t][\"amount\"] = totals_by_type[t][\"amount\"] + g[\"amount\"]\r\n\r\n            data.append({\r\n                \"date\": \"\",\r\n                \"reference\": \"\",\r\n                \"project\": g[\"project\"],\r\n                \"task\": g[\"task\"],\r\n                \"item_code\": \"\",\r\n                \"item_name\": \"\",\r\n                \"qty\": g[\"qty\"],\r\n                \"rate\": \"\",\r\n                \"amount\": g[\"amount\"],\r\n                \"type\": t,\r\n            })\r\n\r\n        # -------------------------\r\n        # إضافة إجمالي كل نوع\r\n        # -------------------------\r\n        for t, val in totals_by_type.items():\r\n            data.append({\r\n                \"date\": \"\",\r\n                \"reference\": _(\"إجمالي \") + t,\r\n                \"project\": \"\",\r\n                \"task\": \"\",\r\n                \"item_code\": \"\",\r\n                \"item_name\": \"\",\r\n                \"qty\": val[\"qty\"],\r\n                \"rate\": \"\",\r\n                \"amount\": val[\"amount\"],\r\n                \"type\": t,\r\n            })\r\n\r\n        # -------------------------\r\n        # المجموع الكلي\r\n        # -------------------------\r\n        total_qty = sum([v[\"qty\"] for v in totals_by_type.values()])\r\n        total_amount = sum([v[\"amount\"] for v in totals_by_type.values()])\r\n        data.append({\r\n            \"date\": \"\",\r\n            \"reference\": _(\"المجموع الكلي\"),\r\n            \"project\": \"\",\r\n            \"task\": \"\",\r\n            \"item_code\": \"\",\r\n            \"item_name\": \"\",\r\n            \"qty\": total_qty,\r\n            \"rate\": \"\",\r\n            \"amount\": total_amount,\r\n            \"type\": \"\",\r\n        })\r\n    else:\r\n        data = all_data\r\n\r\n    return columns, data\r\n\r\ndata = execute(filters)\r\n",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Project_Calc1",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "Project_Calc1",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Project_Calc1",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Project_Calc1",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   }
+  ]
+ },
+ {
+  "add_total_row": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": "\r\nfrappe.query_reports[\"Project_Calc2\"] = {\r\n    filters: [\r\n        { \"fieldname\": \"from_date\", \"label\": \"من تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1 },\r\n        { \"fieldname\": \"to_date\", \"label\": \"إلى تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1 },\r\n        { \"fieldname\": \"project\", \"label\": \"المشروع\", \"fieldtype\": \"Link\", \"options\": \"Project\" },\r\n        { \"fieldname\": \"task\", \"label\": \"المهمة\", \"fieldtype\": \"Link\", \"options\": \"Task\" },\r\n        { \"fieldname\": \"employee\", \"label\": \"الموظف\", \"fieldtype\": \"Link\", \"options\": \"Employee\" },\r\n        { \"fieldname\": \"company\", \"label\": \"الشركة\", \"fieldtype\": \"Link\", \"options\": \"Company\" },\r\n        {\r\n            \"fieldname\": \"amount_type\",\r\n            \"label\": \"نوع السعر\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Billing\\nCosting\",\r\n            \"default\": \"Billing\"\r\n        },\r\n        {\r\n            \"fieldname\": \"group_by\",\r\n            \"label\": \"طريقة العرض\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Detail\\nGrouped\",\r\n            \"default\": \"Detail\"\r\n        },\r\n    ],\r\n\r\n    formatter: function (value, row, column, data, default_formatter) {\r\n        value = default_formatter(value, row, column, data);\r\n\r\n        if (!data) return value;\r\n\r\n        // تلوين صفوف الإجماليات بناءً على محتوى العمود \"reference\"\r\n        if (data.is_total) {\r\n            // إجمالي حسب النوع\r\n            if (data.reference && data.reference.includes(\"Material Request\")) {\r\n                value = `<span style=\"background-color:#dff9fb;font-weight:700;\">${value}</span>`;\r\n            } else if (data.reference && data.reference.includes(\"Timesheet\")) {\r\n                value = `<span style=\"background-color:#f6e58d;font-weight:700;\">${value}</span>`;\r\n            } else if (data.reference && data.reference.includes(\"Expense Claim\")) {\r\n                value = `<span style=\"background-color:#ffcccc;font-weight:700;\">${value}</span>`;\r\n            } else if (data.reference && (data.reference.includes(\"المجموع الكلي\") || data.reference.includes(\"إجمالي كلي\"))) {\r\n                value = `<span style=\"background-color:#badc58;font-weight:700;\">${value}</span>`;\r\n            } else {\r\n                value = `<span style=\"background-color:#dcdde1;font-weight:700;\">${value}</span>`;\r\n            }\r\n        }\r\n\r\n        return value;\r\n    }\r\n};",
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-10-24 19:33:06.343762",
+  "module": "Stock",
+  "name": "Project_Calc2",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Material Request",
+  "reference_report": null,
+  "report_name": "Project_Calc2",
+  "report_script": "# -*- coding: utf-8 -*-\r\ndef execute(filters=None):\r\n    if not filters:\r\n        filters = {}\r\n\r\n    from_date = filters.get(\"from_date\") or frappe.utils.add_years(frappe.utils.today(), -1)\r\n    to_date = filters.get(\"to_date\") or frappe.utils.today()\r\n    project = filters.get(\"project\")\r\n    task = filters.get(\"task\")\r\n    group_by = filters.get(\"group_by\") or \"Detail\"  # 'Grouped' أو 'Detail'\r\n    amount_type = filters.get(\"amount_type\") or \"Billing\"  # \"Billing\" أو \"Costing\"\r\n\r\n    # -------------------------\r\n    # 1️⃣ Material Request\r\n    # -------------------------\r\n    mr_query = \"\"\"\r\n        SELECT\r\n            mr.transaction_date AS date,\r\n            mr.name AS reference,\r\n            mri.project,\r\n            mri.task,\r\n            mri.item_code,\r\n            mri.item_name,\r\n            mri.qty,\r\n            mri.rate,\r\n            mri.amount,\r\n            'Material Request' AS type\r\n        FROM `tabMaterial Request` mr\r\n        INNER JOIN `tabMaterial Request Item` mri ON mr.name = mri.parent\r\n        WHERE mr.docstatus != 3\r\n          AND mr.transaction_date BETWEEN %s AND %s\r\n          AND (%s IS NULL OR mri.project=%s)\r\n          AND (%s IS NULL OR mri.task=%s)\r\n    \"\"\"\r\n    mr_data = frappe.db.sql(mr_query, (from_date, to_date, project, project, task, task), as_dict=True)\r\n\r\n    # -------------------------\r\n    # 2️⃣ Timesheet\r\n    # -------------------------\r\n    # تحديد الحقول حسب الفلتر\r\n    if amount_type == \"Costing\":\r\n        ts_rate_field = \"te.costing_rate\"\r\n        ts_amount_field = \"te.costing_amount\"\r\n    else:\r\n        ts_rate_field = \"te.billing_rate\"\r\n        ts_amount_field = \"te.billing_amount\"\r\n\r\n    ts_query = f\"\"\"\r\n        SELECT\r\n            te.from_time AS date,\r\n            t.name AS reference,\r\n            te.project,\r\n            te.task,\r\n            '' AS item_code,\r\n            '' AS item_name,\r\n            te.hours AS qty,\r\n            {ts_rate_field} AS rate,\r\n            {ts_amount_field} AS amount,\r\n            'Timesheet' AS type\r\n        FROM `tabTimesheet` t\r\n        INNER JOIN `tabTimesheet Detail` te ON t.name = te.parent\r\n        WHERE t.docstatus = 1\r\n          AND te.from_time BETWEEN %s AND %s\r\n          AND (%s IS NULL OR te.project=%s)\r\n          AND (%s IS NULL OR te.task=%s)\r\n    \"\"\"\r\n    ts_data = frappe.db.sql(ts_query, (from_date, to_date, project, project, task, task), as_dict=True)\r\n\r\n    # -------------------------\r\n    # 3️⃣ Expense Claim\r\n    # -------------------------\r\n    if amount_type == \"Costing\":\r\n        ec_amount_field = \"eci.sanctioned_amount\"\r\n    else:\r\n        ec_amount_field = \"eci.amount\"\r\n\r\n    ec_query = f\"\"\"\r\n        SELECT\r\n            eci.expense_date AS date,\r\n            ec.name AS reference,\r\n            ec.project,\r\n            eci.task,\r\n            '' AS item_code,\r\n            eci.expense_type AS item_name,\r\n            1 AS qty,\r\n            {ec_amount_field} AS rate,\r\n            {ec_amount_field} AS amount,\r\n            'Expense Claim' AS type\r\n        FROM `tabExpense Claim` ec\r\n        INNER JOIN `tabExpense Claim Detail` eci ON ec.name = eci.parent\r\n        WHERE ec.docstatus = 1\r\n          AND eci.expense_date BETWEEN %s AND %s\r\n          AND (%s IS NULL OR ec.project=%s)\r\n          AND (%s IS NULL OR eci.task=%s)\r\n    \"\"\"\r\n    ec_data = frappe.db.sql(ec_query, (from_date, to_date, project, project, task, task), as_dict=True)\r\n\r\n    # -------------------------\r\n    # دمج النتائج\r\n    # -------------------------\r\n    all_data = mr_data + ts_data + ec_data\r\n\r\n    # -------------------------\r\n    # الأعمدة الموحدة\r\n    # -------------------------\r\n    columns = [\r\n        {\"label\": _(\"التاريخ\"), \"fieldname\": \"date\", \"fieldtype\": \"Date\", \"width\": 120},\r\n        {\"label\": _(\"المرجع\"), \"fieldname\": \"reference\", \"fieldtype\": \"Data\", \"width\": 150},\r\n        {\"label\": _(\"المشروع\"), \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n        {\"label\": _(\"المهمة\"), \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n        {\"label\": _(\"كود الصنف / البند\"), \"fieldname\": \"item_code\", \"fieldtype\": \"Data\", \"width\": 120},\r\n        {\"label\": _(\"اسم الصنف / نوع المصروف\"), \"fieldname\": \"item_name\", \"fieldtype\": \"Data\", \"width\": 200},\r\n        {\"label\": _(\"الكمية / عدد الساعات\"), \"fieldname\": \"qty\", \"fieldtype\": \"Float\", \"width\": 120},\r\n        {\"label\": _(\"السعر / المبلغ\"), \"fieldname\": \"rate\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": _(\"القيمة\"), \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": _(\"نوع المعاملة\"), \"fieldname\": \"type\", \"fieldtype\": \"Data\", \"width\": 120},\r\n        {\"label\": _(\"إجمالي؟\"), \"fieldname\": \"is_total\", \"fieldtype\": \"Check\", \"width\": 80},\r\n    ]\r\n\r\n    # -------------------------\r\n    # التجميع حسب Project/Task/Type\r\n    # -------------------------\r\n    if group_by == \"Grouped\":\r\n        grouped = {}\r\n        for d in all_data:\r\n            key = (d.get(\"project\") or \"بدون مشروع\", d.get(\"task\") or \"بدون مهمة\", d.get(\"type\"))\r\n            if key not in grouped:\r\n                grouped[key] = {\r\n                    \"project\": key[0],\r\n                    \"task\": key[1],\r\n                    \"type\": key[2],\r\n                    \"qty\": 0,\r\n                    \"amount\": 0,\r\n                }\r\n            grouped[key][\"qty\"] = grouped[key][\"qty\"] + d.get(\"qty\") or 0\r\n            grouped[key][\"amount\"] = grouped[key][\"amount\"] + d.get(\"amount\") or 0\r\n\r\n        data = []\r\n        totals_by_type = {}\r\n        for g in grouped.values():\r\n            t = g[\"type\"]\r\n            if t not in totals_by_type:\r\n                totals_by_type[t] = {\"qty\": 0, \"amount\": 0}\r\n            totals_by_type[t][\"qty\"] = totals_by_type[t][\"qty\"] + g[\"qty\"]\r\n            totals_by_type[t][\"amount\"] = totals_by_type[t][\"amount\"] + g[\"amount\"]\r\n\r\n            data.append({\r\n                \"date\": \"\",\r\n                \"reference\": \"\",\r\n                \"project\": g[\"project\"],\r\n                \"task\": g[\"task\"],\r\n                \"item_code\": \"\",\r\n                \"item_name\": \"\",\r\n                \"qty\": g[\"qty\"],\r\n                \"rate\": g.get(\"rate\", \"\"),\r\n                \"amount\": g[\"amount\"],\r\n                \"type\": t,\r\n                \"is_total\": False,\r\n            })\r\n\r\n        # -------------------------\r\n        # إضافة إجمالي كل نوع\r\n        # -------------------------\r\n        for t, val in totals_by_type.items():\r\n            data.append({\r\n                \"date\": \"\",\r\n                \"reference\": _(\"إجمالي \") + t,\r\n                \"project\": \"\",\r\n                \"task\": \"\",\r\n                \"item_code\": \"\",\r\n                \"item_name\": \"\",\r\n                \"qty\": val[\"qty\"],\r\n                \"rate\": \"\",\r\n                \"amount\": val[\"amount\"],\r\n                \"type\": t,\r\n                \"is_total\": True,\r\n            })\r\n\r\n        # -------------------------\r\n        # المجموع الكلي\r\n        # -------------------------\r\n        total_qty = sum([v[\"qty\"] for v in totals_by_type.values()])\r\n        total_amount = sum([v[\"amount\"] for v in totals_by_type.values()])\r\n        data.append({\r\n            \"date\": \"\",\r\n            \"reference\": _(\"المجموع الكلي\"),\r\n            \"project\": \"\",\r\n            \"task\": \"\",\r\n            \"item_code\": \"\",\r\n            \"item_name\": \"\",\r\n            \"qty\": total_qty,\r\n            \"rate\": \"\",\r\n            \"amount\": total_amount,\r\n            \"type\": \"\",\r\n            \"is_total\": True,\r\n        })\r\n    else:\r\n        data = []\r\n        for d in all_data:\r\n            d[\"is_total\"] = False\r\n            data.append(d)\r\n\r\n    return columns, data\r\n\r\ndata = execute(filters)\r\n",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Project_Calc2",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "Project_Calc2",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Project_Calc2",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Project_Calc2",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   }
+  ]
+ },
+ {
+  "add_total_row": 1,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": "\r\nfrappe.query_reports[\"Project_Calc_FMRQ1\"] = {\r\n    \"filters\": [\r\n        {\"fieldname\": \"from_date\", \"label\": \"من تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1, \"default\": frappe.datetime.add_months(frappe.datetime.get_today(), -12) },\r\n        {\"fieldname\": \"to_date\", \"label\": \"إلى تاريخ\", \"fieldtype\": \"Date\", \"reqd\": 1, \"default\": frappe.datetime.get_today() },\r\n        {\"fieldname\": \"material_request\", \"label\": \"طلب المواد\", \"fieldtype\": \"Link\", \"options\": \"Material Request\"},\r\n        {\"fieldname\": \"project\", \"label\": \"المشروع\", \"fieldtype\": \"Link\", \"options\": \"Project\"},\r\n        {\"fieldname\": \"task\", \"label\": \"المهمة\", \"fieldtype\": \"Link\", \"options\": \"Task\"},\r\n        {\"fieldname\": \"item_code\", \"label\": \"كود الصنف\", \"fieldtype\": \"Link\", \"options\": \"Item\"},\r\n        {\"fieldname\": \"status\", \"label\": \"الحالة\", \"fieldtype\": \"Select\", \"options\": \"\\nDraft\\nSubmitted\\nStopped\\nCancelled\"},\r\n        {\"fieldname\": \"company\", \"label\": \"الشركة\", \"fieldtype\": \"Link\", \"options\": \"Company\"},\r\n        {\r\n            \"fieldname\": \"group_by\",\r\n            \"label\": \"طريقة العرض\",\r\n            \"fieldtype\": \"Select\",\r\n            \"options\": \"Detail\\nGrouped\",\r\n            \"default\": \"Detail\"\r\n        },\r\n        {\r\n            \"fieldname\": \"include_task\",\r\n            \"label\": \"حسب المهام\",\r\n            \"fieldtype\": \"Check\",\r\n            \"default\": 0\r\n        },\r\n        {\r\n            \"fieldname\": \"include_item\",\r\n            \"label\": \"حسب العناصر\",\r\n            \"fieldtype\": \"Check\",\r\n            \"default\": 0\r\n        }\r\n    ]\r\n};\r\n\r\n",
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-10-24 22:06:53.615825",
+  "module": "Stock",
+  "name": "Project_Calc_FMRQ1",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Material Request",
+  "reference_report": null,
+  "report_name": "Project_Calc_FMRQ1",
+  "report_script": "#import frappe\r\n\r\ndef execute1111111(filters=None):\r\n    from_date = filters.get(\"from_date\")\r\n    to_date = filters.get(\"to_date\")\r\n    project = filters.get(\"project\")\r\n    task = filters.get(\"task\")  # ✅ فلتر المهمة\r\n    item_code = filters.get(\"item_code\")\r\n    status = filters.get(\"status\")\r\n    company = filters.get(\"company\")\r\n    material_request = filters.get(\"material_request\")  # ✅ فلتر رقم الطلب\r\n    group_by = filters.get(\"group_by\") or \"Detail\"  # ✅ فلتر التجميع\r\n\r\n    # -----------------------------\r\n    # الأعمدة (columns)\r\n    # -----------------------------\r\n    columns = [\r\n        {\"label\": \"التاريخ\", \"fieldname\": \"transaction_date\", \"fieldtype\": \"Date\", \"width\": 120},\r\n        {\"label\": \"رقم طلب المواد\", \"fieldname\": \"material_request\", \"fieldtype\": \"Link\", \"options\": \"Material Request\", \"width\": 140},\r\n        {\"label\": \"المشروع\", \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n        {\"label\": \"المهمة\", \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n        {\"label\": \"كود الصنف\", \"fieldname\": \"item_code\", \"fieldtype\": \"Link\", \"options\": \"Item\", \"width\": 120},\r\n        {\"label\": \"اسم الصنف\", \"fieldname\": \"item_name\", \"fieldtype\": \"Data\", \"width\": 200},\r\n        {\"label\": \"الكمية\", \"fieldname\": \"qty\", \"fieldtype\": \"Float\", \"width\": 120},\r\n        {\"label\": \"السعر\", \"fieldname\": \"rate\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": \"القيمة\", \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n    ]\r\n\r\n    if group_by == \"Grouped\":\r\n        columns = [\r\n            {\"label\": \"المشروع\", \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n            {\"label\": \"المهمة\", \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n            {\"label\": \"كود الصنف\", \"fieldname\": \"item_code\", \"fieldtype\": \"Link\", \"options\": \"Item\", \"width\": 120},\r\n            {\"label\": \"اسم الصنف\", \"fieldname\": \"item_name\", \"fieldtype\": \"Data\", \"width\": 200},\r\n            {\"label\": \"الكمية\", \"fieldname\": \"qty\", \"fieldtype\": \"Float\", \"width\": 120},\r\n            {\"label\": \"السعر\", \"fieldname\": \"rate\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n            {\"label\": \"القيمة\", \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        ]\r\n\r\n    # -----------------------------\r\n    # الاستعلام (Query)\r\n    # -----------------------------\r\n    if group_by == \"Grouped\":\r\n        query = \"\"\"\r\n            SELECT\r\n                mri.item_code AS item_code,\r\n                mri.item_name AS item_name,\r\n                mri.project AS project,\r\n                mri.task AS task,\r\n                SUM(mri.qty) AS qty,\r\n                AVG(mri.rate) AS rate,\r\n                SUM(mri.amount) AS amount\r\n            FROM `tabMaterial Request` mr\r\n            INNER JOIN `tabMaterial Request Item` mri ON mr.name = mri.parent\r\n            WHERE mr.docstatus < 2\r\n              AND mr.transaction_date BETWEEN %s AND %s\r\n              AND (%s IS NULL OR mri.item_code = %s)\r\n              AND (%s IS NULL OR mr.status = %s)\r\n              AND (%s IS NULL OR mr.company = %s)\r\n              AND (%s IS NULL OR mr.name = %s)\r\n              AND (%s IS NULL OR mri.project = %s)\r\n              AND (%s IS NULL OR mri.task = %s)\r\n            GROUP BY mri.item_code, mri.task, mri.project\r\n            ORDER BY mri.project, mri.task, mri.item_code\r\n        \"\"\"\r\n    else:\r\n        query = \"\"\"\r\n            SELECT \r\n                mr.transaction_date AS transaction_date,\r\n                mr.name AS material_request,\r\n                mri.project AS project,\r\n                mri.task AS task,\r\n                mri.item_code AS item_code,\r\n                mri.item_name AS item_name,\r\n                mri.qty AS qty,\r\n                mri.rate AS rate,\r\n                mri.amount AS amount\r\n            FROM `tabMaterial Request` mr\r\n            INNER JOIN `tabMaterial Request Item` mri ON mr.name = mri.parent\r\n            WHERE mr.docstatus < 2\r\n              AND mr.transaction_date BETWEEN %s AND %s\r\n              AND (%s IS NULL OR mri.item_code = %s)\r\n              AND (%s IS NULL OR mr.status = %s)\r\n              AND (%s IS NULL OR mr.company = %s)\r\n              AND (%s IS NULL OR mr.name = %s)\r\n              AND (%s IS NULL OR mri.project = %s)\r\n              AND (%s IS NULL OR mri.task = %s)\r\n            ORDER BY mr.transaction_date DESC, mr.name\r\n        \"\"\"\r\n\r\n    # -----------------------------\r\n    # تنفيذ الاستعلام\r\n    # -----------------------------\r\n    result = frappe.db.sql(query, (\r\n        from_date, to_date,\r\n        item_code, item_code,\r\n        status, status,\r\n        company, company,\r\n        material_request, material_request,\r\n        project, project,\r\n        task, task\r\n    ), as_dict=True)\r\n\r\n    \r\n    return columns, result\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\ndef execute(filters=None):\r\n    from_date = filters.get(\"from_date\")\r\n    to_date = filters.get(\"to_date\")\r\n    project = filters.get(\"project\")\r\n    task = filters.get(\"task\")\r\n    item_code = filters.get(\"item_code\")\r\n    status = filters.get(\"status\")\r\n    company = filters.get(\"company\")\r\n    material_request = filters.get(\"material_request\")\r\n    group_by = filters.get(\"group_by\") or \"Detail\"\r\n\r\n    # ✅ فلاتر التحكم في التجميع\r\n    include_task = frappe.utils.cint(filters.get(\"include_task\"))  # 1 أو 0\r\n    include_item = frappe.utils.cint(filters.get(\"include_item\"))  # 1 أو 0\r\n\r\n    # -----------------------------\r\n    # الأعمدة\r\n    # -----------------------------\r\n    if group_by == \"Grouped\":\r\n        columns = [\r\n            {\"label\": \"المشروع\", \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 140},\r\n        ]\r\n\r\n        if include_task:\r\n            columns.append({\"label\": \"المهمة\", \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120})\r\n\r\n        if include_item:\r\n            columns.append({\"label\": \"كود الصنف\", \"fieldname\": \"item_code\", \"fieldtype\": \"Link\", \"options\": \"Item\", \"width\": 120})\r\n            columns.append({\"label\": \"اسم الصنف\", \"fieldname\": \"item_name\", \"fieldtype\": \"Data\", \"width\": 200})\r\n\r\n        columns.extend([\r\n            {\"label\": \"الكمية\", \"fieldname\": \"qty\", \"fieldtype\": \"Float\", \"width\": 120},\r\n            {\"label\": \"متوسط السعر\", \"fieldname\": \"rate\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n            {\"label\": \"إجمالي القيمة\", \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        ])\r\n\r\n        # -----------------------------\r\n        # بناء جملة GROUP BY ديناميكيًا\r\n        # -----------------------------\r\n        group_fields = [\"mri.project\"]\r\n        order_fields = [\"mri.project\"]\r\n\r\n        if include_task:\r\n            group_fields.append(\"mri.task\")\r\n            order_fields.append(\"mri.task\")\r\n\r\n        if include_item:\r\n            group_fields.append(\"mri.item_code\")\r\n            order_fields.append(\"mri.item_code\")\r\n\r\n        group_by_clause = \", \".join(group_fields)\r\n        order_by_clause = \", \".join(order_fields)\r\n\r\n        # -----------------------------\r\n        # الاستعلام\r\n        # -----------------------------\r\n        query = f\"\"\"\r\n            SELECT\r\n                mri.project AS project,\r\n                {\"mri.task AS task,\" if include_task else \"\"}\r\n                {\"mri.item_code AS item_code, mri.item_name AS item_name,\" if include_item else \"\"}\r\n                SUM(mri.qty) AS qty,\r\n                AVG(mri.rate) AS rate,\r\n                SUM(mri.amount) AS amount\r\n            FROM `tabMaterial Request` mr\r\n            INNER JOIN `tabMaterial Request Item` mri ON mr.name = mri.parent\r\n            WHERE mr.docstatus < 2\r\n              AND mr.transaction_date BETWEEN %s AND %s\r\n              AND (%s IS NULL OR mri.item_code = %s)\r\n              AND (%s IS NULL OR mr.status = %s)\r\n              AND (%s IS NULL OR mr.company = %s)\r\n              AND (%s IS NULL OR mr.name = %s)\r\n              AND (%s IS NULL OR mri.project = %s)\r\n              AND (%s IS NULL OR mri.task = %s)\r\n            GROUP BY {group_by_clause}\r\n            ORDER BY {order_by_clause}\r\n        \"\"\"\r\n\r\n    else:\r\n        # الوضع التفصيلي\r\n        columns = [\r\n            {\"label\": \"التاريخ\", \"fieldname\": \"transaction_date\", \"fieldtype\": \"Date\", \"width\": 120},\r\n            {\"label\": \"رقم طلب المواد\", \"fieldname\": \"material_request\", \"fieldtype\": \"Link\", \"options\": \"Material Request\", \"width\": 140},\r\n            {\"label\": \"المشروع\", \"fieldname\": \"project\", \"fieldtype\": \"Link\", \"options\": \"Project\", \"width\": 120},\r\n            {\"label\": \"المهمة\", \"fieldname\": \"task\", \"fieldtype\": \"Link\", \"options\": \"Task\", \"width\": 120},\r\n            {\"label\": \"كود الصنف\", \"fieldname\": \"item_code\", \"fieldtype\": \"Link\", \"options\": \"Item\", \"width\": 120},\r\n            {\"label\": \"اسم الصنف\", \"fieldname\": \"item_name\", \"fieldtype\": \"Data\", \"width\": 200},\r\n            {\"label\": \"الكمية\", \"fieldname\": \"qty\", \"fieldtype\": \"Float\", \"width\": 120},\r\n            {\"label\": \"السعر\", \"fieldname\": \"rate\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n            {\"label\": \"القيمة\", \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        ]\r\n\r\n        query = \"\"\"\r\n            SELECT \r\n                mr.transaction_date AS transaction_date,\r\n                mr.name AS material_request,\r\n                mri.project AS project,\r\n                mri.task AS task,\r\n                mri.item_code AS item_code,\r\n                mri.item_name AS item_name,\r\n                mri.qty AS qty,\r\n                mri.rate AS rate,\r\n                mri.amount AS amount\r\n            FROM `tabMaterial Request` mr\r\n            INNER JOIN `tabMaterial Request Item` mri ON mr.name = mri.parent\r\n            WHERE mr.docstatus < 2\r\n              AND mr.transaction_date BETWEEN %s AND %s\r\n              AND (%s IS NULL OR mri.item_code = %s)\r\n              AND (%s IS NULL OR mr.status = %s)\r\n              AND (%s IS NULL OR mr.company = %s)\r\n              AND (%s IS NULL OR mr.name = %s)\r\n              AND (%s IS NULL OR mri.project = %s)\r\n              AND (%s IS NULL OR mri.task = %s)\r\n            ORDER BY mr.transaction_date DESC, mr.name\r\n        \"\"\"\r\n\r\n    # -----------------------------\r\n    # تنفيذ الاستعلام\r\n    # -----------------------------\r\n    result = frappe.db.sql(query, (\r\n        from_date, to_date,\r\n        item_code, item_code,\r\n        status, status,\r\n        company, company,\r\n        material_request, material_request,\r\n        project, project,\r\n        task, task\r\n    ), as_dict=True)\r\n\r\n    return columns, result\r\n\r\n\r\ndata =execute(filters)",
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "Project_Calc_FMRQ1",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "Project_Calc_FMRQ1",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Project_Calc_FMRQ1",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Project_Calc_FMRQ1",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   }
+  ]
+ }
+]
