@@ -1,0 +1,92 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "UOM",
+  "enabled": 1,
+  "modified": "2025-10-20 22:47:23.521436",
+  "must_be_whole_number": 0,
+  "name": "متر³",
+  "uom_name": "متر³"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOM",
+  "enabled": 1,
+  "modified": "2025-10-20 22:44:24.919491",
+  "must_be_whole_number": 0,
+  "name": "يوم",
+  "uom_name": "يوم"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOM",
+  "enabled": 1,
+  "modified": "2025-10-20 22:43:41.463543",
+  "must_be_whole_number": 0,
+  "name": "لتر",
+  "uom_name": "لتر"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOM",
+  "enabled": 1,
+  "modified": "2025-10-20 22:45:56.330471",
+  "must_be_whole_number": 0,
+  "name": "وحدة",
+  "uom_name": "وحدة"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOM",
+  "enabled": 1,
+  "modified": "2025-10-20 12:49:22.348976",
+  "must_be_whole_number": 0,
+  "name": "متر مربع",
+  "uom_name": "متر مربع"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOM",
+  "enabled": 1,
+  "modified": "2025-10-20 22:49:17.544757",
+  "must_be_whole_number": 0,
+  "name": "متر²",
+  "uom_name": "متر²"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOM",
+  "enabled": 1,
+  "modified": "2025-10-20 22:49:29.183481",
+  "must_be_whole_number": 0,
+  "name": "متر",
+  "uom_name": "متر"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOM",
+  "enabled": 1,
+  "modified": "2025-10-20 22:43:21.323455",
+  "must_be_whole_number": 0,
+  "name": "مجموعة",
+  "uom_name": "مجموعة"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOM",
+  "enabled": 1,
+  "modified": "2025-09-02 22:43:07.998115",
+  "must_be_whole_number": 0,
+  "name": "كغ",
+  "uom_name": "كغ"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "UOM",
+  "enabled": 1,
+  "modified": "2025-09-02 22:17:00.854896",
+  "must_be_whole_number": 0,
+  "name": "قطعة",
+  "uom_name": "قطعة"
+ }
+]
