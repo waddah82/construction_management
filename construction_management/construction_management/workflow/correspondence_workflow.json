@@ -1,0 +1,48 @@
+{
+  "doctype": "Workflow",
+  "workflow_name": "Correspondence Workflow",
+  "document_type": "Correspondence",
+  "is_active": 1,
+  "states": [
+    {
+      "state": "Draft",
+      "doc_status": 0,
+      "allow_edit": 1
+    },
+    {
+      "state": "Sent",
+      "doc_status": 0,
+      "allow_edit": 1
+    },
+    {
+      "state": "Received",
+      "doc_status": 0,
+      "allow_edit": 1
+    },
+    {
+      "state": "Archived",
+      "doc_status": 1,
+      "allow_edit": 0
+    }
+  ],
+  "transitions": [
+    {
+      "state": "Draft",
+      "action": "Send",
+      "next_state": "Sent",
+      "allowed": "Secretary"
+    },
+    {
+      "state": "Sent",
+      "action": "Receive",
+      "next_state": "Received",
+      "allowed": "Secretary,Secretariat Manager"
+    },
+    {
+      "state": "Received",
+      "action": "Archive",
+      "next_state": "Archived",
+      "allowed": "Secretariat Manager"
+    }
+  ]
+}
