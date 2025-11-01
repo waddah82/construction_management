@@ -1,0 +1,143 @@
+{
+  "doctype": "DocType",
+  "name": "Project Planning",
+  "module": "Construction Management",
+  "autoname": "field:project",
+  "fields": [
+    {
+      "fieldname": "project",
+      "label": "Project",
+      "fieldtype": "Link",
+      "options": "Project",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "label": "Company",
+      "fieldtype": "Link",
+      "options": "Company"
+    },
+    {
+      "fieldname": "planning_date",
+      "label": "Planning Date",
+      "fieldtype": "Date",
+      "default": "Today"
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Draft\nSubmitted",
+      "default": "Draft"
+    },
+
+    {
+      "fieldname": "tasks_section",
+      "label": "?? Project Tasks",
+      "fieldtype": "Section Break",
+      "collapsible": 1,
+      "collapsible_depends_on": "eval:1"
+    },
+    {
+      "fieldname": "tasks",
+      "label": "Planned Tasks",
+      "fieldtype": "Table",
+      "options": "Project Planning Task"
+    },
+
+    {
+      "fieldname": "timesheets_section",
+      "label": "?? Timesheets",
+      "fieldtype": "Section Break",
+      "collapsible": 1,
+      "collapsible_depends_on": "eval:1"
+    },
+    {
+      "fieldname": "timesheets",
+      "label": "Planned Timesheets",
+      "fieldtype": "Table",
+      "options": "Project Planning Timesheet"
+    },
+
+    {
+      "fieldname": "expenses_section",
+      "label": "?? Expenses",
+      "fieldtype": "Section Break",
+      "collapsible": 1,
+      "collapsible_depends_on": "eval:1"
+    },
+    {
+      "fieldname": "expenses",
+      "label": "Planned Expenses",
+      "fieldtype": "Table",
+      "options": "Project Planning Expense"
+    },
+
+    {
+      "fieldname": "materials_section",
+      "label": "?? Planned Materials",
+      "fieldtype": "Section Break",
+      "collapsible": 1,
+      "collapsible_depends_on": "eval:1"
+    },
+    {
+      "fieldname": "materials",
+      "label": "Planned Materials",
+      "fieldtype": "Table",
+      "options": "Project Planning Material"
+    },
+
+    {
+      "fieldname": "totals_section",
+      "label": "?? Totals Summary",
+      "fieldtype": "Section Break",
+      "collapsible": 1,
+      "collapsible_depends_on": "eval:1"
+    },
+    {
+      "fieldname": "materials_total",
+      "label": "Materials Total",
+      "fieldtype": "Currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "expenses_total",
+      "label": "Expenses Total",
+      "fieldtype": "Currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "timesheets_total",
+      "label": "Timesheets Total",
+      "fieldtype": "Currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "tasks_total",
+      "label": "Tasks Total",
+      "fieldtype": "Currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_cost",
+      "label": "Total Project Cost",
+      "fieldtype": "Currency",
+      "read_only": 1,
+      "bold": 1
+    }
+  ],
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ]
+}

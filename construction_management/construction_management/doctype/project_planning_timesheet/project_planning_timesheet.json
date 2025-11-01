@@ -1,0 +1,40 @@
+{
+  "doctype": "DocType",
+  "name": "Project Planning Timesheet",
+  "module": "Construction Management",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "employee", "label": "Employee", "fieldtype": "Link", "options": "Employee", "in_list_view": 1},
+    {"fieldname": "activity_type", "label": "Activity Type", "fieldtype": "Link", "options": "Activity Type", "in_list_view": 1},
+    {"fieldname": "task", "label": "Task", "fieldtype": "Link", "options": "Task", "in_list_view": 1},
+    {"fieldname": "hours", "label": "Hours", "fieldtype": "Float", "in_list_view": 1},
+    {"fieldname": "rate", "label": "Rate", "fieldtype": "Currency", "in_list_view": 1},
+    {"fieldname": "create_timesheet", "label": "Create Timesheet Entry", "fieldtype": "Check", "in_list_view": 1},
+    {
+      "fieldname": "create_ts_button",
+      "label": "Create",
+      "fieldtype": "Button",
+      "in_list_view": 1
+    }
+  ],
+ "istable": 1,
+ "links": [],
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
