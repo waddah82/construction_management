@@ -1,0 +1,375 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Project Template",
+  "modified": "2025-10-20 02:05:31.914284",
+  "name": "بناء عمارة",
+  "project_type": "External",
+  "tasks": [
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الأعمال التمهيدية والإعدادية",
+    "task": "TTMP-2025-00001"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الأعمال الإنشائية (الهيكل الخرساني)",
+    "task": "TTMP-2025-00002"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الأعمال المعمارية (الطوب والبناء)",
+    "task": "TTMP-2025-00003"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الأعمال الصحية (السباكة)",
+    "task": "TTMP-2025-00004"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الأعمال الكهربائية",
+    "task": "TTMP-2025-00005"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "أعمال التكييف والتهوية",
+    "task": "TTMP-2025-00006"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "التشطيبات الداخلية",
+    "task": "TTMP-2025-00007"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "التشطيبات الخارجية والمناطق العامة",
+    "task": "TTMP-2025-00008"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الأعمال النهائية والتسليم",
+    "task": "TTMP-2025-00009"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الحصول على التراخيص البلدية والموافقات",
+    "task": "TTMP-2025-00010"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تسوية وتجهيز الموقع",
+    "task": "TTMP-2025-00011"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "أعمال الحفر والتأسيس",
+    "task": "TTMP-2025-00012"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "أعمال ردم الأساسات",
+    "task": "TTMP-2025-00013"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تركيب خشب الحفر (الشدادات)",
+    "task": "TTMP-2025-00014"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الدور الأرضي - الهيكل الإنشائي",
+    "task": "TTMP-2025-00020"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الدور الأول - الهيكل الإنشائي",
+    "task": "TTMP-2025-00030"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الدور الثاني - الهيكل الإنشائي",
+    "task": "TTMP-2025-00040"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "السطح - أعمال خرسانية",
+    "task": "TTMP-2025-00050"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "بناء حوائط الطوب للدور الأرضي",
+    "task": "TTMP-2025-00060"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "بناء حوائط الطوب للدور الأول",
+    "task": "TTMP-2025-00061"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "بناء حوائط الطوب للدور الثاني",
+    "task": "TTMP-2025-00062"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "بناء حوائط دورات المياه والعزل",
+    "task": "TTMP-2025-00063"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تمديدات مواسير المياه الباردة والساخنة (الخام)",
+    "task": "TTMP-2025-00070"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تمديدات مواسير الصرف الصحي",
+    "task": "TTMP-2025-00071"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تركيب الوصلات الأرضية (الطرد)",
+    "task": "TTMP-2025-00072"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "أعمال عزل دورات المياه",
+    "task": "TTMP-2025-00073"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تركيب الأحواض والمراحيض والمغاسل",
+    "task": "TTMP-2025-00074"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تمديدات الأنابيب (الكوندوئيت) والخراطيم",
+    "task": "TTMP-2025-00080"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "سحب الكابلات والأسلاك",
+    "task": "TTMP-2025-00081"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تركيب لوحات التوزيع الرئيسية والفرعية",
+    "task": "TTMP-2025-00082"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تركيب المفاتيح والبرايز والمصابيح",
+    "task": "TTMP-2025-00083"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تركيب نظام التأريض",
+    "task": "TTMP-2025-00084"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تركيب نظام الإنذار ضد الحريق",
+    "task": "TTMP-2025-00085"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تمديدات أنابيب التكييف",
+    "task": "TTMP-2025-00086"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تركيب الوحدات الداخلية والخارجية",
+    "task": "TTMP-2025-00087"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "أعمال العزل لأنابيب التكييف",
+    "task": "TTMP-2025-00088"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تشغيل واختبار النظام",
+    "task": "TTMP-2025-00089"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الأعمال البياض (اللياسة) - جميع الأدوار",
+    "task": "TTMP-2025-00090"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "أعمال السيراميك والبلاط - جميع الأدوار",
+    "task": "TTMP-2025-00091"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "أعمال النجارة (أبواب، شبابيك، مطابخ)",
+    "task": "TTMP-2025-00092"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "أعمال الدهان والطلاء - جميع الأدوار",
+    "task": "TTMP-2025-00093"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "أعمال الواجهة (كلاadding أو دهان)",
+    "task": "TTMP-2025-00094"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تركيب نظام الصرف الصحي الخارجي",
+    "task": "TTMP-2025-00095"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "رصف المدخل والمواقف",
+    "task": "TTMP-2025-00096"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "أعمال التنسيق الخارجي (اللاندسكيب)",
+    "task": "TTMP-2025-00097"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تركيب المصاعد (إن وجد)",
+    "task": "TTMP-2025-00098"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تنظيف المبنى تنظيفاً نهائياً",
+    "task": "TTMP-2025-00100"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "اختبارات التشغيل النهائية لجميع الأنظمة",
+    "task": "TTMP-2025-00110"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "إصلاح الملاحظات (سناقل)",
+    "task": "TTMP-2025-00120"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الحصول على شهادة الإتمام النهائي",
+    "task": "TTMP-2025-00130"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "الحصول على شهادة الإتمام النهائي",
+    "task": "TTMP-2025-00130"
+   },
+   {
+    "parent": "بناء عمارة",
+    "parentfield": "tasks",
+    "parenttype": "Project Template",
+    "subject": "تسليم المفاتيح للعميل",
+    "task": "TTMP-2025-00140"
+   }
+  ]
+ }
+]
