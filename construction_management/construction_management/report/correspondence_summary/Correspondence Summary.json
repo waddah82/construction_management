@@ -1,0 +1,9 @@
+{
+  "doctype": "Report",
+  "name": "Correspondence Summary",
+  "ref_doctype": "Correspondence",
+  "report_type": "Query Report",
+  "is_standard": 0,
+  "query": "SELECT status as status, COUNT(name) as total FROM `tabCorrespondence` WHERE correspondence_date BETWEEN %(from_date)s AND %(to_date)s GROUP BY status ORDER BY total DESC",
+  "report_is_standard": 0
+}
