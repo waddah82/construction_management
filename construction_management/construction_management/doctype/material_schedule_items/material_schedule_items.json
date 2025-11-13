@@ -1,0 +1,164 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-01 14:29:07.044243",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section",
+  "activity",
+  "item",
+  "materials_or_labour_item",
+  "quantity_required",
+  "rate",
+  "amount",
+  "delivery_date",
+  "activity_name",
+  "column_break_sifc",
+  "description",
+  "specifications",
+  "unit_of_measure",
+  "supplier_employee",
+  "party",
+  "party_name",
+  "status",
+  "comments_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Section ",
+   "options": "Task Type"
+  },
+  {
+   "fieldname": "activity",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Activity ",
+   "options": "Task"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "BoQ Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "unit_of_measure",
+   "fieldtype": "Link",
+   "label": "Unit of Measure",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "quantity_required",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Quantity Required"
+  },
+  {
+   "fieldname": "column_break_sifc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "specifications",
+   "fieldtype": "Small Text",
+   "label": "Specifications"
+  },
+  {
+   "fieldname": "supplier_employee",
+   "fieldtype": "Link",
+   "label": "Supplier Details/Employee",
+   "link_filters": "[[\"DocType\",\"name\",\"in\",[\"Supplier\",\"Employee\"]]]",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nOrdered\nIn Transit\nDelivered\nUsed"
+  },
+  {
+   "fieldname": "comments_notes",
+   "fieldtype": "Small Text",
+   "label": "Comments/Notes"
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Dynamic Link",
+   "label": "Party",
+   "options": "supplier_employee"
+  },
+  {
+   "fetch_from": "supplier_employee.sender_name_field",
+   "fieldname": "party_name",
+   "fieldtype": "Data",
+   "label": "Party Name"
+  },
+  {
+   "fetch_from": "activity.subject",
+   "fieldname": "activity_name",
+   "fieldtype": "Data",
+   "label": "Activity Name"
+  },
+  {
+   "fieldname": "materials_or_labour_item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Materials or Labour Item",
+   "options": "Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-07 11:29:40.961762",
+ "modified_by": "Administrator",
+ "module": "Construction Management",
+ "name": "Material Schedule Items",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

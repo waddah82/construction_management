@@ -1,0 +1,36 @@
+{
+  "doctype": "DocType",
+  "name": "Project Planning Task",
+  "module": "Construction Management",
+  "editable_grid": 1,
+  "fields": [
+    {"fieldname": "task_name", "label": "Task Name", "fieldtype": "Data", "in_list_view": 1},
+    {"fieldname": "description", "label": "Description", "fieldtype": "Small Text", "in_list_view": 1},
+    {"fieldname": "expected_start_date", "label": "Expected Start Date", "fieldtype": "Date", "in_list_view": 1},
+    {"fieldname": "expected_end_date", "label": "Expected End Date", "fieldtype": "Date", "in_list_view": 1},
+    {"fieldname": "estimated_hours", "label": "Estimated Hours", "fieldtype": "Float", "in_list_view": 1},
+    {"fieldname": "estimated_cost", "label": "Estimated Cost", "fieldtype": "Currency", "in_list_view": 1},
+    {"fieldname": "employee", "label": "Employee", "fieldtype": "Link", "options": "Employee", "in_list_view": 1}
+    
+  ],
+ "istable": 1,
+ "links": [],
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

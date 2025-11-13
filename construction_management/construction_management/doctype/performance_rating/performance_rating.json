@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-15 10:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "rating_date",
+  "quality_rating",
+  "timeliness_rating",
+  "safety_rating",
+  "communication_rating",
+  "overall_rating",
+  "comments"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Construction Project"
+  },
+  {
+   "fieldname": "rating_date",
+   "fieldtype": "Date",
+   "label": "Rating Date"
+  },
+  {
+   "fieldname": "quality_rating",
+   "fieldtype": "Rating",
+   "label": "Quality Rating"
+  },
+  {
+   "fieldname": "timeliness_rating",
+   "fieldtype": "Rating",
+   "label": "Timeliness Rating"
+  },
+  {
+   "fieldname": "safety_rating",
+   "fieldtype": "Rating",
+   "label": "Safety Rating"
+  },
+  {
+   "fieldname": "communication_rating",
+   "fieldtype": "Rating",
+   "label": "Communication Rating"
+  },
+  {
+   "fieldname": "overall_rating",
+   "fieldtype": "Rating",
+   "label": "Overall Rating",
+   "read_only": 1
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Text",
+   "label": "Comments"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-15 10:00:00",
+ "modified_by": "Administrator",
+ "module": "Construction Management",
+ "name": "Performance Rating",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
