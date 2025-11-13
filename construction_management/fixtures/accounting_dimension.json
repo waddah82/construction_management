@@ -1,0 +1,13 @@
+[
+ {
+  "dimension_defaults": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Accounting Dimension",
+  "document_type": "Task",
+  "fieldname": "task",
+  "label": "Task",
+  "modified": "2025-11-03 19:32:56.851310",
+  "name": "Task"
+ }
+]
