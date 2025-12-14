@@ -1,0 +1,2241 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:23.326266",
+  "name": "نظام إدارة الجودة",
+  "old_parent": "",
+  "parent_quality_procedure": "",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "نظام إدارة الجودة"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 1,
+  "modified": "2025-12-12 21:21:23.874777",
+  "name": "إجراءات فحص الأعمال التمهيدية",
+  "old_parent": "",
+  "parent_quality_procedure": "",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراءات فحص الأعمال التمهيدية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص أعمال الحفر والتأسيس",
+    "process_description": "إجراء فحص أعمال الحفر والتأسيس"
+   },
+   {
+    "parent": "إجراءات فحص الأعمال التمهيدية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص أعمال الردم",
+    "process_description": "إجراء فحص أعمال الردم"
+   },
+   {
+    "parent": "إجراءات فحص الأعمال التمهيدية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص تركيب الفرم",
+    "process_description": "إجراء فحص تركيب الفرم"
+   }
+  ],
+  "quality_procedure_name": "إجراءات فحص الأعمال التمهيدية"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:33.017142",
+  "name": "إجراء فحص أعمال الردم",
+  "old_parent": "إجراءات فحص الأعمال التمهيدية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال التمهيدية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص أعمال الردم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. أخذ عينات من مواد الردم للفحص"
+   },
+   {
+    "parent": "إجراء فحص أعمال الردم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. اختبار كثافة الردم باستخدام جهاز بروكتور"
+   },
+   {
+    "parent": "إجراء فحص أعمال الردم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. فحص طبقات الردم والتأكد من الدمك الجيد"
+   },
+   {
+    "parent": "إجراء فحص أعمال الردم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. أخذ عينات من مواد الردم للفحص"
+   },
+   {
+    "parent": "إجراء فحص أعمال الردم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار كثافة الردم باستخدام جهاز بروكتور"
+   },
+   {
+    "parent": "إجراء فحص أعمال الردم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص طبقات الردم والتأكد من الدمك الجيد"
+   },
+   {
+    "parent": "إجراء فحص أعمال الردم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. أخذ عينات من مواد الردم للفحص"
+   },
+   {
+    "parent": "إجراء فحص أعمال الردم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار كثافة الردم باستخدام جهاز بروكتور"
+   },
+   {
+    "parent": "إجراء فحص أعمال الردم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص طبقات الردم والتأكد من الدمك الجيد"
+   },
+   {
+    "parent": "إجراء فحص أعمال الردم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. أخذ عينات من مواد الردم للفحص"
+   },
+   {
+    "parent": "إجراء فحص أعمال الردم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار كثافة الردم باستخدام جهاز بروكتور"
+   },
+   {
+    "parent": "إجراء فحص أعمال الردم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص طبقات الردم والتأكد من الدمك الجيد"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص أعمال الردم"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 1,
+  "modified": "2025-12-12 21:21:24.040109",
+  "name": "إجراءات فحص الأعمال الإنشائية",
+  "old_parent": "",
+  "parent_quality_procedure": "",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراءات فحص الأعمال الإنشائية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص الخرسانة المسلحة",
+    "process_description": "إجراء فحص الخرسانة المسلحة"
+   },
+   {
+    "parent": "إجراءات فحص الأعمال الإنشائية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص حديد التسليح",
+    "process_description": "إجراء فحص حديد التسليح"
+   },
+   {
+    "parent": "إجراءات فحص الأعمال الإنشائية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص الهيكل الخرساني",
+    "process_description": "إجراء فحص الهيكل الخرساني"
+   }
+  ],
+  "quality_procedure_name": "إجراءات فحص الأعمال الإنشائية"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:33.657057",
+  "name": "إجراء فحص الهيكل الخرساني",
+  "old_parent": "إجراءات فحص الأعمال الإنشائية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال الإنشائية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص الهيكل الخرساني",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. فحص استقامة وعمودية الأعمدة"
+   },
+   {
+    "parent": "إجراء فحص الهيكل الخرساني",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. قياس أبعاد الكمرات والبلاطات"
+   },
+   {
+    "parent": "إجراء فحص الهيكل الخرساني",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. فحص أسطح الخرسانة بعد الفك"
+   },
+   {
+    "parent": "إجراء فحص الهيكل الخرساني",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص استقامة وعمودية الأعمدة"
+   },
+   {
+    "parent": "إجراء فحص الهيكل الخرساني",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. قياس أبعاد الكمرات والبلاطات"
+   },
+   {
+    "parent": "إجراء فحص الهيكل الخرساني",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص أسطح الخرسانة بعد الفك"
+   },
+   {
+    "parent": "إجراء فحص الهيكل الخرساني",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص استقامة وعمودية الأعمدة"
+   },
+   {
+    "parent": "إجراء فحص الهيكل الخرساني",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. قياس أبعاد الكمرات والبلاطات"
+   },
+   {
+    "parent": "إجراء فحص الهيكل الخرساني",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص أسطح الخرسانة بعد الفك"
+   },
+   {
+    "parent": "إجراء فحص الهيكل الخرساني",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص استقامة وعمودية الأعمدة"
+   },
+   {
+    "parent": "إجراء فحص الهيكل الخرساني",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. قياس أبعاد الكمرات والبلاطات"
+   },
+   {
+    "parent": "إجراء فحص الهيكل الخرساني",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص أسطح الخرسانة بعد الفك"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص الهيكل الخرساني"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:33.986276",
+  "name": "إجراء فحص عزل الحمامات",
+  "old_parent": "إجراءات فحص الأعمال المعمارية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال المعمارية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص عزل الحمامات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. فحص مواد العزل المائي"
+   },
+   {
+    "parent": "إجراء فحص عزل الحمامات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. التأكد من تطبيق العزل في جميع الزوايا"
+   },
+   {
+    "parent": "إجراء فحص عزل الحمامات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. اختبار العزل بالماء لمدة 24 ساعة"
+   },
+   {
+    "parent": "إجراء فحص عزل الحمامات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص مواد العزل المائي"
+   },
+   {
+    "parent": "إجراء فحص عزل الحمامات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. التأكد من تطبيق العزل في جميع الزوايا"
+   },
+   {
+    "parent": "إجراء فحص عزل الحمامات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. اختبار العزل بالماء لمدة 24 ساعة"
+   },
+   {
+    "parent": "إجراء فحص عزل الحمامات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص مواد العزل المائي"
+   },
+   {
+    "parent": "إجراء فحص عزل الحمامات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. التأكد من تطبيق العزل في جميع الزوايا"
+   },
+   {
+    "parent": "إجراء فحص عزل الحمامات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. اختبار العزل بالماء لمدة 24 ساعة"
+   },
+   {
+    "parent": "إجراء فحص عزل الحمامات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص مواد العزل المائي"
+   },
+   {
+    "parent": "إجراء فحص عزل الحمامات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. التأكد من تطبيق العزل في جميع الزوايا"
+   },
+   {
+    "parent": "إجراء فحص عزل الحمامات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. اختبار العزل بالماء لمدة 24 ساعة"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص عزل الحمامات"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 1,
+  "modified": "2025-12-12 21:21:24.317907",
+  "name": "إجراءات فحص الأعمال الصحية",
+  "old_parent": "",
+  "parent_quality_procedure": "",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراءات فحص الأعمال الصحية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص مواسير المياه",
+    "process_description": "إجراء فحص مواسير المياه"
+   },
+   {
+    "parent": "إجراءات فحص الأعمال الصحية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص مواسير الصرف",
+    "process_description": "إجراء فحص مواسير الصرف"
+   },
+   {
+    "parent": "إجراءات فحص الأعمال الصحية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص تركيب السباكة",
+    "process_description": "إجراء فحص تركيب السباكة"
+   }
+  ],
+  "quality_procedure_name": "إجراءات فحص الأعمال الصحية"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:34.237440",
+  "name": "إجراء فحص مواسير الصرف",
+  "old_parent": "إجراءات فحص الأعمال الصحية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال الصحية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص مواسير الصرف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. فحص ميل مواسير الصرف (2%)"
+   },
+   {
+    "parent": "إجراء فحص مواسير الصرف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. اختبار التصريف بالماء"
+   },
+   {
+    "parent": "إجراء فحص مواسير الصرف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. فحص نقاط التهوية للصرف"
+   },
+   {
+    "parent": "إجراء فحص مواسير الصرف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص ميل مواسير الصرف (2%)"
+   },
+   {
+    "parent": "إجراء فحص مواسير الصرف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار التصريف بالماء"
+   },
+   {
+    "parent": "إجراء فحص مواسير الصرف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص نقاط التهوية للصرف"
+   },
+   {
+    "parent": "إجراء فحص مواسير الصرف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص ميل مواسير الصرف (2%)"
+   },
+   {
+    "parent": "إجراء فحص مواسير الصرف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار التصريف بالماء"
+   },
+   {
+    "parent": "إجراء فحص مواسير الصرف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص نقاط التهوية للصرف"
+   },
+   {
+    "parent": "إجراء فحص مواسير الصرف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص ميل مواسير الصرف (2%)"
+   },
+   {
+    "parent": "إجراء فحص مواسير الصرف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار التصريف بالماء"
+   },
+   {
+    "parent": "إجراء فحص مواسير الصرف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص نقاط التهوية للصرف"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص مواسير الصرف"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:34.382686",
+  "name": "إجراء فحص تركيب السباكة",
+  "old_parent": "إجراءات فحص الأعمال الصحية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال الصحية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص تركيب السباكة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. فحص تركيب الأحواض والمراحيض"
+   },
+   {
+    "parent": "إجراء فحص تركيب السباكة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. اختبار تشغيل خلاطات المياه"
+   },
+   {
+    "parent": "إجراء فحص تركيب السباكة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. فحص تسريبات المياه بعد التركيب"
+   },
+   {
+    "parent": "إجراء فحص تركيب السباكة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص تركيب الأحواض والمراحيض"
+   },
+   {
+    "parent": "إجراء فحص تركيب السباكة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار تشغيل خلاطات المياه"
+   },
+   {
+    "parent": "إجراء فحص تركيب السباكة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص تسريبات المياه بعد التركيب"
+   },
+   {
+    "parent": "إجراء فحص تركيب السباكة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص تركيب الأحواض والمراحيض"
+   },
+   {
+    "parent": "إجراء فحص تركيب السباكة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار تشغيل خلاطات المياه"
+   },
+   {
+    "parent": "إجراء فحص تركيب السباكة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص تسريبات المياه بعد التركيب"
+   },
+   {
+    "parent": "إجراء فحص تركيب السباكة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص تركيب الأحواض والمراحيض"
+   },
+   {
+    "parent": "إجراء فحص تركيب السباكة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار تشغيل خلاطات المياه"
+   },
+   {
+    "parent": "إجراء فحص تركيب السباكة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص تسريبات المياه بعد التركيب"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص تركيب السباكة"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 1,
+  "modified": "2025-12-12 21:21:24.549539",
+  "name": "إجراءات فحص الأعمال الكهربائية",
+  "old_parent": "",
+  "parent_quality_procedure": "",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراءات فحص الأعمال الكهربائية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص تمديدات الكهرباء",
+    "process_description": "إجراء فحص تمديدات الكهرباء"
+   },
+   {
+    "parent": "إجراءات فحص الأعمال الكهربائية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص لوحات التوزيع",
+    "process_description": "إجراء فحص لوحات التوزيع"
+   },
+   {
+    "parent": "إجراءات فحص الأعمال الكهربائية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص نظام التأريض",
+    "process_description": "إجراء فحص نظام التأريض"
+   },
+   {
+    "parent": "إجراءات فحص الأعمال الكهربائية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص نظام الإنذار",
+    "process_description": "إجراء فحص نظام الإنذار"
+   }
+  ],
+  "quality_procedure_name": "إجراءات فحص الأعمال الكهربائية"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:34.515724",
+  "name": "إجراء فحص تمديدات الكهرباء",
+  "old_parent": "إجراءات فحص الأعمال الكهربائية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال الكهربائية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص تمديدات الكهرباء",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. فحص نوع وجودة الأنابيب (الكوندوئيت)"
+   },
+   {
+    "parent": "إجراء فحص تمديدات الكهرباء",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. التأكد من سحب الأسلاك في الأنابيب"
+   },
+   {
+    "parent": "إجراء فحص تمديدات الكهرباء",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. فحص توصيلات الأسلاك في الصناديق"
+   },
+   {
+    "parent": "إجراء فحص تمديدات الكهرباء",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص نوع وجودة الأنابيب (الكوندوئيت)"
+   },
+   {
+    "parent": "إجراء فحص تمديدات الكهرباء",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. التأكد من سحب الأسلاك في الأنابيب"
+   },
+   {
+    "parent": "إجراء فحص تمديدات الكهرباء",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص توصيلات الأسلاك في الصناديق"
+   },
+   {
+    "parent": "إجراء فحص تمديدات الكهرباء",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص نوع وجودة الأنابيب (الكوندوئيت)"
+   },
+   {
+    "parent": "إجراء فحص تمديدات الكهرباء",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. التأكد من سحب الأسلاك في الأنابيب"
+   },
+   {
+    "parent": "إجراء فحص تمديدات الكهرباء",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص توصيلات الأسلاك في الصناديق"
+   },
+   {
+    "parent": "إجراء فحص تمديدات الكهرباء",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص نوع وجودة الأنابيب (الكوندوئيت)"
+   },
+   {
+    "parent": "إجراء فحص تمديدات الكهرباء",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. التأكد من سحب الأسلاك في الأنابيب"
+   },
+   {
+    "parent": "إجراء فحص تمديدات الكهرباء",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص توصيلات الأسلاك في الصناديق"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص تمديدات الكهرباء"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:34.655610",
+  "name": "إجراء فحص لوحات التوزيع",
+  "old_parent": "إجراءات فحص الأعمال الكهربائية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال الكهربائية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص لوحات التوزيع",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. فحص تركيب وتثبيت لوحات التوزيع"
+   },
+   {
+    "parent": "إجراء فحص لوحات التوزيع",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. اختبار قواطع الكهرباء (الفيوزات)"
+   },
+   {
+    "parent": "إجراء فحص لوحات التوزيع",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. فحص ترميز وتوصيل الدوائر"
+   },
+   {
+    "parent": "إجراء فحص لوحات التوزيع",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص تركيب وتثبيت لوحات التوزيع"
+   },
+   {
+    "parent": "إجراء فحص لوحات التوزيع",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار قواطع الكهرباء (الفيوزات)"
+   },
+   {
+    "parent": "إجراء فحص لوحات التوزيع",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص ترميز وتوصيل الدوائر"
+   },
+   {
+    "parent": "إجراء فحص لوحات التوزيع",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص تركيب وتثبيت لوحات التوزيع"
+   },
+   {
+    "parent": "إجراء فحص لوحات التوزيع",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار قواطع الكهرباء (الفيوزات)"
+   },
+   {
+    "parent": "إجراء فحص لوحات التوزيع",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص ترميز وتوصيل الدوائر"
+   },
+   {
+    "parent": "إجراء فحص لوحات التوزيع",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص تركيب وتثبيت لوحات التوزيع"
+   },
+   {
+    "parent": "إجراء فحص لوحات التوزيع",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار قواطع الكهرباء (الفيوزات)"
+   },
+   {
+    "parent": "إجراء فحص لوحات التوزيع",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص ترميز وتوصيل الدوائر"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص لوحات التوزيع"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:34.787459",
+  "name": "إجراء فحص نظام التأريض",
+  "old_parent": "إجراءات فحص الأعمال الكهربائية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال الكهربائية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص نظام التأريض",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. قياس مقاومة التأريض بالأوم"
+   },
+   {
+    "parent": "إجراء فحص نظام التأريض",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. فحص موصلات التأريض وتوصيلاتها"
+   },
+   {
+    "parent": "إجراء فحص نظام التأريض",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. اختبار نظام التأريض بالجهاز الخاص"
+   },
+   {
+    "parent": "إجراء فحص نظام التأريض",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. قياس مقاومة التأريض بالأوم"
+   },
+   {
+    "parent": "إجراء فحص نظام التأريض",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. فحص موصلات التأريض وتوصيلاتها"
+   },
+   {
+    "parent": "إجراء فحص نظام التأريض",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. اختبار نظام التأريض بالجهاز الخاص"
+   },
+   {
+    "parent": "إجراء فحص نظام التأريض",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. قياس مقاومة التأريض بالأوم"
+   },
+   {
+    "parent": "إجراء فحص نظام التأريض",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. فحص موصلات التأريض وتوصيلاتها"
+   },
+   {
+    "parent": "إجراء فحص نظام التأريض",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. اختبار نظام التأريض بالجهاز الخاص"
+   },
+   {
+    "parent": "إجراء فحص نظام التأريض",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. قياس مقاومة التأريض بالأوم"
+   },
+   {
+    "parent": "إجراء فحص نظام التأريض",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. فحص موصلات التأريض وتوصيلاتها"
+   },
+   {
+    "parent": "إجراء فحص نظام التأريض",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. اختبار نظام التأريض بالجهاز الخاص"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص نظام التأريض"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:34.914291",
+  "name": "إجراء فحص نظام الإنذار",
+  "old_parent": "إجراءات فحص الأعمال الكهربائية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال الكهربائية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص نظام الإنذار",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. اختبار حساسات الدخان والحرارة"
+   },
+   {
+    "parent": "إجراء فحص نظام الإنذار",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. فحص أجهزة الإنذار الصوتي والضوئي"
+   },
+   {
+    "parent": "إجراء فحص نظام الإنذار",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. اختبار نظام الإنذار في حالات الطوارئ"
+   },
+   {
+    "parent": "إجراء فحص نظام الإنذار",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. اختبار حساسات الدخان والحرارة"
+   },
+   {
+    "parent": "إجراء فحص نظام الإنذار",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. فحص أجهزة الإنذار الصوتي والضوئي"
+   },
+   {
+    "parent": "إجراء فحص نظام الإنذار",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. اختبار نظام الإنذار في حالات الطوارئ"
+   },
+   {
+    "parent": "إجراء فحص نظام الإنذار",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. اختبار حساسات الدخان والحرارة"
+   },
+   {
+    "parent": "إجراء فحص نظام الإنذار",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. فحص أجهزة الإنذار الصوتي والضوئي"
+   },
+   {
+    "parent": "إجراء فحص نظام الإنذار",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. اختبار نظام الإنذار في حالات الطوارئ"
+   },
+   {
+    "parent": "إجراء فحص نظام الإنذار",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. اختبار حساسات الدخان والحرارة"
+   },
+   {
+    "parent": "إجراء فحص نظام الإنذار",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. فحص أجهزة الإنذار الصوتي والضوئي"
+   },
+   {
+    "parent": "إجراء فحص نظام الإنذار",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. اختبار نظام الإنذار في حالات الطوارئ"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص نظام الإنذار"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 1,
+  "modified": "2025-12-12 21:21:24.722825",
+  "name": "إجراءات فحص أعمال التكييف",
+  "old_parent": "",
+  "parent_quality_procedure": "",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراءات فحص أعمال التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص تمديدات التكييف",
+    "process_description": "إجراء فحص تمديدات التكييف"
+   },
+   {
+    "parent": "إجراءات فحص أعمال التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص وحدات التكييف",
+    "process_description": "إجراء فحص وحدات التكييف"
+   },
+   {
+    "parent": "إجراءات فحص أعمال التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص عزل أنابيب التكييف",
+    "process_description": "إجراء فحص عزل أنابيب التكييف"
+   }
+  ],
+  "quality_procedure_name": "إجراءات فحص أعمال التكييف"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:35.161337",
+  "name": "إجراء فحص وحدات التكييف",
+  "old_parent": "إجراءات فحص أعمال التكييف",
+  "parent_quality_procedure": "إجراءات فحص أعمال التكييف",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص وحدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. فحص تركيب الوحدات الداخلية"
+   },
+   {
+    "parent": "إجراء فحص وحدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. فحص تركيب الوحدات الخارجية"
+   },
+   {
+    "parent": "إجراء فحص وحدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. اختبار تشغيل وحدات التكييف"
+   },
+   {
+    "parent": "إجراء فحص وحدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص تركيب الوحدات الداخلية"
+   },
+   {
+    "parent": "إجراء فحص وحدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. فحص تركيب الوحدات الخارجية"
+   },
+   {
+    "parent": "إجراء فحص وحدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. اختبار تشغيل وحدات التكييف"
+   },
+   {
+    "parent": "إجراء فحص وحدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص تركيب الوحدات الداخلية"
+   },
+   {
+    "parent": "إجراء فحص وحدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. فحص تركيب الوحدات الخارجية"
+   },
+   {
+    "parent": "إجراء فحص وحدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. اختبار تشغيل وحدات التكييف"
+   },
+   {
+    "parent": "إجراء فحص وحدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص تركيب الوحدات الداخلية"
+   },
+   {
+    "parent": "إجراء فحص وحدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. فحص تركيب الوحدات الخارجية"
+   },
+   {
+    "parent": "إجراء فحص وحدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. اختبار تشغيل وحدات التكييف"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص وحدات التكييف"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 1,
+  "modified": "2025-12-12 21:21:24.968505",
+  "name": "إجراءات فحص أعمال التشطيبات",
+  "old_parent": "",
+  "parent_quality_procedure": "",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراءات فحص أعمال التشطيبات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص أعمال اللياسة",
+    "process_description": "إجراء فحص أعمال اللياسة"
+   },
+   {
+    "parent": "إجراءات فحص أعمال التشطيبات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص أعمال السيراميك",
+    "process_description": "إجراء فحص أعمال السيراميك"
+   },
+   {
+    "parent": "إجراءات فحص أعمال التشطيبات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص أعمال النجارة",
+    "process_description": "إجراء فحص أعمال النجارة"
+   },
+   {
+    "parent": "إجراءات فحص أعمال التشطيبات",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص أعمال الدهان",
+    "process_description": "إجراء فحص أعمال الدهان"
+   }
+  ],
+  "quality_procedure_name": "إجراءات فحص أعمال التشطيبات"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:24.785970",
+  "name": "إجراء فحص أعمال اللياسة",
+  "old_parent": "إجراءات فحص أعمال التشطيبات",
+  "parent_quality_procedure": "إجراءات فحص أعمال التشطيبات",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "إجراء فحص أعمال اللياسة"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:24.834842",
+  "name": "إجراء فحص أعمال السيراميك",
+  "old_parent": "إجراءات فحص أعمال التشطيبات",
+  "parent_quality_procedure": "إجراءات فحص أعمال التشطيبات",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "إجراء فحص أعمال السيراميك"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:24.892990",
+  "name": "إجراء فحص أعمال النجارة",
+  "old_parent": "إجراءات فحص أعمال التشطيبات",
+  "parent_quality_procedure": "إجراءات فحص أعمال التشطيبات",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "إجراء فحص أعمال النجارة"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:24.960480",
+  "name": "إجراء فحص أعمال الدهان",
+  "old_parent": "إجراءات فحص أعمال التشطيبات",
+  "parent_quality_procedure": "إجراءات فحص أعمال التشطيبات",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "إجراء فحص أعمال الدهان"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 1,
+  "modified": "2025-12-12 21:21:25.273126",
+  "name": "إجراءات فحص التشطيبات الخارجية",
+  "old_parent": "",
+  "parent_quality_procedure": "",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراءات فحص التشطيبات الخارجية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص أعمال الواجهة",
+    "process_description": "إجراء فحص أعمال الواجهة"
+   },
+   {
+    "parent": "إجراءات فحص التشطيبات الخارجية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص الصرف الخارجي",
+    "process_description": "إجراء فحص الصرف الخارجي"
+   },
+   {
+    "parent": "إجراءات فحص التشطيبات الخارجية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص أعمال الرصف",
+    "process_description": "إجراء فحص أعمال الرصف"
+   },
+   {
+    "parent": "إجراءات فحص التشطيبات الخارجية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص التنسيق الخارجي",
+    "process_description": "إجراء فحص التنسيق الخارجي"
+   },
+   {
+    "parent": "إجراءات فحص التشطيبات الخارجية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص تركيب المصاعد",
+    "process_description": "إجراء فحص تركيب المصاعد"
+   }
+  ],
+  "quality_procedure_name": "إجراءات فحص التشطيبات الخارجية"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:25.043533",
+  "name": "إجراء فحص أعمال الواجهة",
+  "old_parent": "إجراءات فحص التشطيبات الخارجية",
+  "parent_quality_procedure": "إجراءات فحص التشطيبات الخارجية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "إجراء فحص أعمال الواجهة"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:25.145068",
+  "name": "إجراء فحص أعمال الرصف",
+  "old_parent": "إجراءات فحص التشطيبات الخارجية",
+  "parent_quality_procedure": "إجراءات فحص التشطيبات الخارجية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "إجراء فحص أعمال الرصف"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:25.199390",
+  "name": "إجراء فحص التنسيق الخارجي",
+  "old_parent": "إجراءات فحص التشطيبات الخارجية",
+  "parent_quality_procedure": "إجراءات فحص التشطيبات الخارجية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "إجراء فحص التنسيق الخارجي"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:25.266345",
+  "name": "إجراء فحص تركيب المصاعد",
+  "old_parent": "إجراءات فحص التشطيبات الخارجية",
+  "parent_quality_procedure": "إجراءات فحص التشطيبات الخارجية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "إجراء فحص تركيب المصاعد"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 1,
+  "modified": "2025-12-12 21:21:25.404476",
+  "name": "إجراءات الفحص النهائي والتسليم",
+  "old_parent": "",
+  "parent_quality_procedure": "",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراءات الفحص النهائي والتسليم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء الفحص النهائي للأنظمة",
+    "process_description": "إجراء الفحص النهائي للأنظمة"
+   },
+   {
+    "parent": "إجراءات الفحص النهائي والتسليم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء استلام وتسليم المفتاح",
+    "process_description": "إجراء استلام وتسليم المفتاح"
+   }
+  ],
+  "quality_procedure_name": "إجراءات الفحص النهائي والتسليم"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:25.397698",
+  "name": "إجراء استلام وتسليم المفتاح",
+  "old_parent": "إجراءات الفحص النهائي والتسليم",
+  "parent_quality_procedure": "إجراءات الفحص النهائي والتسليم",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "إجراء استلام وتسليم المفتاح"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 1,
+  "modified": "2025-12-12 00:20:47.370835",
+  "name": "فحص الاساس",
+  "old_parent": "",
+  "parent_quality_procedure": null,
+  "process_owner": null,
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "فحص الاساس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "فحص تخشيبة وحديد الاساس",
+    "process_description": "فحص تخشيبة وحديد الاساس"
+   }
+  ],
+  "quality_procedure_name": "فحص الاساس"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 00:20:47.362303",
+  "name": "فحص تخشيبة وحديد الاساس",
+  "old_parent": "فحص الاساس",
+  "parent_quality_procedure": "فحص الاساس",
+  "process_owner": null,
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "فحص تخشيبة وحديد الاساس"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:33.145982",
+  "name": "إجراء فحص تركيب الفرم",
+  "old_parent": "إجراءات فحص الأعمال التمهيدية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال التمهيدية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص تركيب الفرم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. فحص أبعاد الفرم والقوالب"
+   },
+   {
+    "parent": "إجراء فحص تركيب الفرم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. التحقق من استقامة وتعامد الفرم"
+   },
+   {
+    "parent": "إجراء فحص تركيب الفرم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. فحص متانة ودعامات الفرم"
+   },
+   {
+    "parent": "إجراء فحص تركيب الفرم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص أبعاد الفرم والقوالب"
+   },
+   {
+    "parent": "إجراء فحص تركيب الفرم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. التحقق من استقامة وتعامد الفرم"
+   },
+   {
+    "parent": "إجراء فحص تركيب الفرم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص متانة ودعامات الفرم"
+   },
+   {
+    "parent": "إجراء فحص تركيب الفرم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص أبعاد الفرم والقوالب"
+   },
+   {
+    "parent": "إجراء فحص تركيب الفرم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. التحقق من استقامة وتعامد الفرم"
+   },
+   {
+    "parent": "إجراء فحص تركيب الفرم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص متانة ودعامات الفرم"
+   },
+   {
+    "parent": "إجراء فحص تركيب الفرم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص أبعاد الفرم والقوالب"
+   },
+   {
+    "parent": "إجراء فحص تركيب الفرم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. التحقق من استقامة وتعامد الفرم"
+   },
+   {
+    "parent": "إجراء فحص تركيب الفرم",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص متانة ودعامات الفرم"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص تركيب الفرم"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 1,
+  "modified": "2025-12-12 21:21:24.153731",
+  "name": "إجراءات فحص الأعمال المعمارية",
+  "old_parent": "",
+  "parent_quality_procedure": "",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراءات فحص الأعمال المعمارية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص أعمال البناء والطوب",
+    "process_description": "إجراء فحص أعمال البناء والطوب"
+   },
+   {
+    "parent": "إجراءات فحص الأعمال المعمارية",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "إجراء فحص عزل الحمامات",
+    "process_description": "إجراء فحص عزل الحمامات"
+   }
+  ],
+  "quality_procedure_name": "إجراءات فحص الأعمال المعمارية"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-13 00:33:55.774137",
+  "name": "إجراء فحص أعمال البناء والطوب",
+  "old_parent": "إجراءات فحص الأعمال المعمارية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال المعمارية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص أعمال البناء والطوب",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. فحص استقامة الحوائط بالميزان"
+   },
+   {
+    "parent": "إجراء فحص أعمال البناء والطوب",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. قياس رأسية الحوائط بالميزان"
+   },
+   {
+    "parent": "إجراء فحص أعمال البناء والطوب",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. فحص جودة المونة وخلطها"
+   },
+   {
+    "parent": "إجراء فحص أعمال البناء والطوب",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "4. قياس سمك مفاصل الطوب"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص أعمال البناء والطوب"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:34.110012",
+  "name": "إجراء فحص مواسير المياه",
+  "old_parent": "إجراءات فحص الأعمال الصحية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال الصحية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص مواسير المياه",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. فحص نوع وجودة مواسير المياه"
+   },
+   {
+    "parent": "إجراء فحص مواسير المياه",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. اختبار ضغط المواسير الهيدروستاتيكي"
+   },
+   {
+    "parent": "إجراء فحص مواسير المياه",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. فحص وصلات وتوصيلات المواسير"
+   },
+   {
+    "parent": "إجراء فحص مواسير المياه",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص نوع وجودة مواسير المياه"
+   },
+   {
+    "parent": "إجراء فحص مواسير المياه",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار ضغط المواسير الهيدروستاتيكي"
+   },
+   {
+    "parent": "إجراء فحص مواسير المياه",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص وصلات وتوصيلات المواسير"
+   },
+   {
+    "parent": "إجراء فحص مواسير المياه",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص نوع وجودة مواسير المياه"
+   },
+   {
+    "parent": "إجراء فحص مواسير المياه",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار ضغط المواسير الهيدروستاتيكي"
+   },
+   {
+    "parent": "إجراء فحص مواسير المياه",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص وصلات وتوصيلات المواسير"
+   },
+   {
+    "parent": "إجراء فحص مواسير المياه",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص نوع وجودة مواسير المياه"
+   },
+   {
+    "parent": "إجراء فحص مواسير المياه",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار ضغط المواسير الهيدروستاتيكي"
+   },
+   {
+    "parent": "إجراء فحص مواسير المياه",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص وصلات وتوصيلات المواسير"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص مواسير المياه"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:35.039687",
+  "name": "إجراء فحص تمديدات التكييف",
+  "old_parent": "إجراءات فحص أعمال التكييف",
+  "parent_quality_procedure": "إجراءات فحص أعمال التكييف",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص تمديدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. فحص تركيب أنابيب التكييف النحاسية"
+   },
+   {
+    "parent": "إجراء فحص تمديدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. اختبار ضغط نظام التبريد"
+   },
+   {
+    "parent": "إجراء فحص تمديدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. فحص العزل الحراري للأنابيب"
+   },
+   {
+    "parent": "إجراء فحص تمديدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص تركيب أنابيب التكييف النحاسية"
+   },
+   {
+    "parent": "إجراء فحص تمديدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار ضغط نظام التبريد"
+   },
+   {
+    "parent": "إجراء فحص تمديدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص العزل الحراري للأنابيب"
+   },
+   {
+    "parent": "إجراء فحص تمديدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص تركيب أنابيب التكييف النحاسية"
+   },
+   {
+    "parent": "إجراء فحص تمديدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار ضغط نظام التبريد"
+   },
+   {
+    "parent": "إجراء فحص تمديدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص العزل الحراري للأنابيب"
+   },
+   {
+    "parent": "إجراء فحص تمديدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص تركيب أنابيب التكييف النحاسية"
+   },
+   {
+    "parent": "إجراء فحص تمديدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. اختبار ضغط نظام التبريد"
+   },
+   {
+    "parent": "إجراء فحص تمديدات التكييف",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص العزل الحراري للأنابيب"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص تمديدات التكييف"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:24.716896",
+  "name": "إجراء فحص عزل أنابيب التكييف",
+  "old_parent": "إجراءات فحص أعمال التكييف",
+  "parent_quality_procedure": "إجراءات فحص أعمال التكييف",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "إجراء فحص عزل أنابيب التكييف"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:25.345413",
+  "name": "إجراء الفحص النهائي للأنظمة",
+  "old_parent": "إجراءات الفحص النهائي والتسليم",
+  "parent_quality_procedure": "إجراءات الفحص النهائي والتسليم",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "إجراء الفحص النهائي للأنظمة"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:32.879066",
+  "name": "إجراء فحص أعمال الحفر والتأسيس",
+  "old_parent": "إجراءات فحص الأعمال التمهيدية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال التمهيدية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. التحقق من عمق الحفر حسب المخططات الإنشائية"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. فحص استقرار جوانب الحفر والانحدارات"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. تسوية قاع الحفر وتنظيفه من المخلفات"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "4. فحص جودة التربة في منطقة الأساسات"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. التحقق من عمق الحفر حسب المخططات الإنشائية"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. فحص استقرار جوانب الحفر والانحدارات"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. تسوية قاع الحفر وتنظيفه من المخلفات"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "4. فحص جودة التربة في منطقة الأساسات"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. التحقق من عمق الحفر حسب المخططات الإنشائية"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. فحص استقرار جوانب الحفر والانحدارات"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. تسوية قاع الحفر وتنظيفه من المخلفات"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "4. فحص جودة التربة في منطقة الأساسات"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. التحقق من عمق الحفر حسب المخططات الإنشائية"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. فحص استقرار جوانب الحفر والانحدارات"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. تسوية قاع الحفر وتنظيفه من المخلفات"
+   },
+   {
+    "parent": "إجراء فحص أعمال الحفر والتأسيس",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "4. فحص جودة التربة في منطقة الأساسات"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص أعمال الحفر والتأسيس"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:33.327855",
+  "name": "إجراء فحص الخرسانة المسلحة",
+  "old_parent": "إجراءات فحص الأعمال الإنشائية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال الإنشائية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. اختبار هطول الخرسانة (Slump Test)"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. أخذ عينات المكعبات الخرسانية"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. فحص قوام ومكونات الخرسانة"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "4. مراقبة عملية الصب والدمك"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. اختبار هطول الخرسانة (Slump Test)"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. أخذ عينات المكعبات الخرسانية"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص قوام ومكونات الخرسانة"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "4. مراقبة عملية الصب والدمك"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. اختبار هطول الخرسانة (Slump Test)"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. أخذ عينات المكعبات الخرسانية"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص قوام ومكونات الخرسانة"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "4. مراقبة عملية الصب والدمك"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. اختبار هطول الخرسانة (Slump Test)"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. أخذ عينات المكعبات الخرسانية"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص قوام ومكونات الخرسانة"
+   },
+   {
+    "parent": "إجراء فحص الخرسانة المسلحة",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "4. مراقبة عملية الصب والدمك"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص الخرسانة المسلحة"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 22:20:33.527703",
+  "name": "إجراء فحص حديد التسليح",
+  "old_parent": "إجراءات فحص الأعمال الإنشائية",
+  "parent_quality_procedure": "إجراءات فحص الأعمال الإنشائية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "1. فحص شهادات حديد التسليح"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "2. التحقق من أقطار وعدد أسياخ الحديد"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "3. فحص تثبيت وتوصيل حديد التسليح"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": "",
+    "process_description": "4. قياس غطاء الخرسانة للحديد"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص شهادات حديد التسليح"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. التحقق من أقطار وعدد أسياخ الحديد"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص تثبيت وتوصيل حديد التسليح"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "4. قياس غطاء الخرسانة للحديد"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص شهادات حديد التسليح"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. التحقق من أقطار وعدد أسياخ الحديد"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص تثبيت وتوصيل حديد التسليح"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "4. قياس غطاء الخرسانة للحديد"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "1. فحص شهادات حديد التسليح"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "2. التحقق من أقطار وعدد أسياخ الحديد"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "3. فحص تثبيت وتوصيل حديد التسليح"
+   },
+   {
+    "parent": "إجراء فحص حديد التسليح",
+    "parentfield": "processes",
+    "parenttype": "Quality Procedure",
+    "procedure": null,
+    "process_description": "4. قياس غطاء الخرسانة للحديد"
+   }
+  ],
+  "quality_procedure_name": "إجراء فحص حديد التسليح"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-12 21:21:25.093274",
+  "name": "إجراء فحص الصرف الخارجي",
+  "old_parent": "إجراءات فحص التشطيبات الخارجية",
+  "parent_quality_procedure": "إجراءات فحص التشطيبات الخارجية",
+  "process_owner": "",
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "إجراء فحص الصرف الخارجي"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Quality Procedure",
+  "is_group": 0,
+  "modified": "2025-12-03 00:52:28.641323",
+  "name": "rr",
+  "old_parent": "",
+  "parent_quality_procedure": null,
+  "process_owner": null,
+  "process_owner_full_name": null,
+  "processes": [],
+  "quality_procedure_name": "rr"
+ }
+]

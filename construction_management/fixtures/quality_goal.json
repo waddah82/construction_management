@@ -1,0 +1,679 @@
+[
+ {
+  "date": "1",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Weekly",
+  "goal": "rrrrrrrr",
+  "modified": "2025-12-03 00:53:50.055075",
+  "name": "rrrrrrrr",
+  "objectives": [
+   {
+    "objective": "obj1",
+    "parent": "rrrrrrrr",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "target1",
+    "uom": ""
+   }
+  ],
+  "procedure": "rr",
+  "task": null,
+  "weekday": "Monday"
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "ضمان دقة عمق الحفر حسب المخططات ±5 سم",
+  "modified": "2025-12-12 23:10:38.680706",
+  "name": "ضمان دقة عمق الحفر حسب المخططات ±5 سم",
+  "objectives": [
+   {
+    "objective": "عمق الحفر",
+    "parent": "ضمان دقة عمق الحفر حسب المخططات ±5 سم",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "مطابق للمخططات ±5 سم",
+    "uom": "Meter"
+   }
+  ],
+  "procedure": "إجراء فحص أعمال الحفر والتأسيس",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Weekly",
+  "goal": "ضمان كثافة الردم 95% من الكثافة القصوى",
+  "modified": "2025-12-12 22:20:35.572266",
+  "name": "ضمان كثافة الردم 95% من الكثافة القصوى",
+  "objectives": [
+   {
+    "objective": "كثافة الردم",
+    "parent": "ضمان كثافة الردم 95% من الكثافة القصوى",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "95% من الكثافة القصوى",
+    "uom": "Percent"
+   },
+   {
+    "objective": "كثافة الردم",
+    "parent": "ضمان كثافة الردم 95% من الكثافة القصوى",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "95% من الكثافة القصوى",
+    "uom": "Percent"
+   },
+   {
+    "objective": "كثافة الردم",
+    "parent": "ضمان كثافة الردم 95% من الكثافة القصوى",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "95% من الكثافة القصوى",
+    "uom": "Percent"
+   },
+   {
+    "objective": "كثافة الردم",
+    "parent": "ضمان كثافة الردم 95% من الكثافة القصوى",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "95% من الكثافة القصوى",
+    "uom": "Percent"
+   }
+  ],
+  "procedure": "إجراء فحص أعمال الردم",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "دقة أبعاد الفرم والشدادات ±2 سم",
+  "modified": "2025-12-12 23:15:32.397547",
+  "name": "دقة أبعاد الفرم والشدادات ±2 سم",
+  "objectives": [
+   {
+    "objective": "أبعاد الفرم",
+    "parent": "دقة أبعاد الفرم والشدادات ±2 سم",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "±2 سم",
+    "uom": "Centimeter"
+   }
+  ],
+  "procedure": "إجراء فحص تركيب الفرم",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "جودة حديد التسليح وموقعه في الدور الأول",
+  "modified": "2025-12-12 21:21:25.527054",
+  "name": "جودة حديد التسليح وموقعه في الدور الأول",
+  "objectives": [],
+  "procedure": "إجراء فحص حديد التسليح",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Weekly",
+  "goal": "مقاومة خرسانة الدور الأول ≥35 ميجاباسكال",
+  "modified": "2025-12-12 21:21:25.533501",
+  "name": "مقاومة خرسانة الدور الأول ≥35 ميجاباسكال",
+  "objectives": [],
+  "procedure": "إجراء فحص الخرسانة المسلحة",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "جودة حديد التسليح وموقعه في الدور الثاني",
+  "modified": "2025-12-12 21:21:25.539843",
+  "name": "جودة حديد التسليح وموقعه في الدور الثاني",
+  "objectives": [],
+  "procedure": "إجراء فحص حديد التسليح",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Weekly",
+  "goal": "مقاومة خرسانة الدور الثاني ≥35 ميجاباسكال",
+  "modified": "2025-12-12 21:21:25.546189",
+  "name": "مقاومة خرسانة الدور الثاني ≥35 ميجاباسكال",
+  "objectives": [],
+  "procedure": "إجراء فحص الخرسانة المسلحة",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Weekly",
+  "goal": "مقاومة خرسانة السطح ≥35 ميجاباسكال",
+  "modified": "2025-12-12 21:21:25.553172",
+  "name": "مقاومة خرسانة السطح ≥35 ميجاباسكال",
+  "objectives": [],
+  "procedure": "إجراء فحص الخرسانة المسلحة",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "استقامة حوائط الطوب للدور الأرضي ±5 مم/متر",
+  "modified": "2025-12-12 23:14:51.660010",
+  "name": "استقامة حوائط الطوب للدور الأرضي ±5 مم/متر",
+  "objectives": [
+   {
+    "objective": "سمك المفاصل",
+    "parent": "استقامة حوائط الطوب للدور الأرضي ±5 مم/متر",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "10-15 مم",
+    "uom": "Millimeter"
+   }
+  ],
+  "procedure": "إجراء فحص أعمال البناء والطوب",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "استقامة حوائط الطوب للدور الأول ±5 مم/متر",
+  "modified": "2025-12-12 21:21:25.565213",
+  "name": "استقامة حوائط الطوب للدور الأول ±5 مم/متر",
+  "objectives": [],
+  "procedure": "إجراء فحص أعمال البناء والطوب",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "استقامة حوائط الطوب للدور الثاني ±5 مم/متر",
+  "modified": "2025-12-12 21:21:25.571203",
+  "name": "استقامة حوائط الطوب للدور الثاني ±5 مم/متر",
+  "objectives": [],
+  "procedure": "إجراء فحص أعمال البناء والطوب",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "عدم تسرب مواسير المياه الباردة والساخنة",
+  "modified": "2025-12-12 23:14:32.995391",
+  "name": "عدم تسرب مواسير المياه الباردة والساخنة",
+  "objectives": [
+   {
+    "objective": "اختبار الضغط",
+    "parent": "عدم تسرب مواسير المياه الباردة والساخنة",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "10 بار لمدة ساعة",
+    "uom": "Bar"
+   }
+  ],
+  "procedure": "إجراء فحص مواسير المياه",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "عدم انسداد مواسير الصرف الصحي",
+  "modified": "2025-12-12 21:21:25.588835",
+  "name": "عدم انسداد مواسير الصرف الصحي",
+  "objectives": [],
+  "procedure": "إجراء فحص مواسير الصرف",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "تركيب صحي سليم للأحواض والمراحيض",
+  "modified": "2025-12-12 21:21:25.595579",
+  "name": "تركيب صحي سليم للأحواض والمراحيض",
+  "objectives": [],
+  "procedure": "إجراء فحص تركيب السباكة",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "سلامة تمديدات الأنابيب الكهربائية",
+  "modified": "2025-12-12 21:21:25.601805",
+  "name": "سلامة تمديدات الأنابيب الكهربائية",
+  "objectives": [],
+  "procedure": "إجراء فحص تمديدات الكهرباء",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "سلامة سحب الكابلات والأسلاك",
+  "modified": "2025-12-12 21:21:25.608230",
+  "name": "سلامة سحب الكابلات والأسلاك",
+  "objectives": [],
+  "procedure": "إجراء فحص تمديدات الكهرباء",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "سلامة لوحات التوزيع الكهربائية",
+  "modified": "2025-12-12 21:21:25.614697",
+  "name": "سلامة لوحات التوزيع الكهربائية",
+  "objectives": [],
+  "procedure": "إجراء فحص لوحات التوزيع",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "سلامة تركيب المفاتيح والبرايز",
+  "modified": "2025-12-12 21:21:25.620695",
+  "name": "سلامة تركيب المفاتيح والبرايز",
+  "objectives": [],
+  "procedure": "إجراء فحص تمديدات الكهرباء",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "سلامة تمديدات أنابيب التكييف",
+  "modified": "2025-12-12 23:14:17.675361",
+  "name": "سلامة تمديدات أنابيب التكييف",
+  "objectives": [
+   {
+    "objective": "ضغط الأنابيب",
+    "parent": "سلامة تمديدات أنابيب التكييف",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "مطابق للمواصفات",
+    "uom": "Bar"
+   }
+  ],
+  "procedure": "إجراء فحص تمديدات التكييف",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "كفاءة وحدات التكييف الداخلية والخارجية",
+  "modified": "2025-12-12 21:21:25.638954",
+  "name": "كفاءة وحدات التكييف الداخلية والخارجية",
+  "objectives": [],
+  "procedure": "إجراء فحص وحدات التكييف",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "استواء أسطح اللياسة ±2 مم/متر",
+  "modified": "2025-12-12 21:21:25.652601",
+  "name": "استواء أسطح اللياسة ±2 مم/متر",
+  "objectives": [],
+  "procedure": "إجراء فحص أعمال اللياسة",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "جودة تركيب السيراميك والبلاط",
+  "modified": "2025-12-12 21:21:25.661784",
+  "name": "جودة تركيب السيراميك والبلاط",
+  "objectives": [],
+  "procedure": "إجراء فحص أعمال السيراميك",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "جودة أعمال النجارة (أبواب وشبابيك)",
+  "modified": "2025-12-12 21:21:25.668839",
+  "name": "جودة أعمال النجارة (أبواب وشبابيك)",
+  "objectives": [],
+  "procedure": "إجراء فحص أعمال النجارة",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "نعومة وتجانس أعمال الدهان",
+  "modified": "2025-12-12 21:21:25.675392",
+  "name": "نعومة وتجانس أعمال الدهان",
+  "objectives": [],
+  "procedure": "إجراء فحص أعمال الدهان",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "جودة أعمال الواجهة الخارجية",
+  "modified": "2025-12-12 21:21:25.681506",
+  "name": "جودة أعمال الواجهة الخارجية",
+  "objectives": [],
+  "procedure": "إجراء فحص أعمال الواجهة",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "جودة أعمال رصف المدخل والمواقف",
+  "modified": "2025-12-12 21:21:25.690531",
+  "name": "جودة أعمال رصف المدخل والمواقف",
+  "objectives": [],
+  "procedure": "إجراء فحص أعمال الرصف",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "جودة أعمال التنسيق الخارجي",
+  "modified": "2025-12-12 21:21:25.697236",
+  "name": "جودة أعمال التنسيق الخارجي",
+  "objectives": [],
+  "procedure": "إجراء فحص التنسيق الخارجي",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "1",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Monthly",
+  "goal": "جودة عزل دورات المياه",
+  "modified": "2025-12-12 21:58:33.512052",
+  "name": "جودة عزل دورات المياه",
+  "objectives": [],
+  "procedure": "إجراء فحص عزل الحمامات",
+  "task": null,
+  "weekday": "Monday"
+ },
+ {
+  "date": "1",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Monthly",
+  "goal": "فعالية نظام التأريض الكهربائي",
+  "modified": "2025-12-12 21:58:33.531144",
+  "name": "فعالية نظام التأريض الكهربائي",
+  "objectives": [],
+  "procedure": "إجراء فحص نظام التأريض",
+  "task": null,
+  "weekday": "Monday"
+ },
+ {
+  "date": "1",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Monthly",
+  "goal": "فعالية نظام الإنذار ضد الحريق",
+  "modified": "2025-12-12 21:58:33.539977",
+  "name": "فعالية نظام الإنذار ضد الحريق",
+  "objectives": [],
+  "procedure": "إجراء فحص نظام الإنذار",
+  "task": null,
+  "weekday": "Monday"
+ },
+ {
+  "date": "1",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Monthly",
+  "goal": "فعالية عزل أنابيب التكييف",
+  "modified": "2025-12-12 23:10:18.611540",
+  "name": "فعالية عزل أنابيب التكييف",
+  "objectives": [
+   {
+    "objective": "سمك العزل",
+    "parent": "فعالية عزل أنابيب التكييف",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "مطابق للمواصفات",
+    "uom": "Millimeter"
+   }
+  ],
+  "procedure": "إجراء فحص عزل أنابيب التكييف",
+  "task": null,
+  "weekday": "Monday"
+ },
+ {
+  "date": "1",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Monthly",
+  "goal": "كفاءة تشغيل نظام التكييف",
+  "modified": "2025-12-12 21:58:33.556164",
+  "name": "كفاءة تشغيل نظام التكييف",
+  "objectives": [],
+  "procedure": "إجراء فحص وحدات التكييف",
+  "task": null,
+  "weekday": "Monday"
+ },
+ {
+  "date": "1",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Monthly",
+  "goal": "سلامة تركيب المصاعد",
+  "modified": "2025-12-12 21:58:33.576638",
+  "name": "سلامة تركيب المصاعد",
+  "objectives": [],
+  "procedure": "إجراء فحص تركيب المصاعد",
+  "task": null,
+  "weekday": "Monday"
+ },
+ {
+  "date": "1",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Monthly",
+  "goal": "نظافة المبنى النهائية",
+  "modified": "2025-12-12 21:58:33.584185",
+  "name": "نظافة المبنى النهائية",
+  "objectives": [],
+  "procedure": "إجراء الفحص النهائي للأنظمة",
+  "task": null,
+  "weekday": "Monday"
+ },
+ {
+  "date": "1",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Monthly",
+  "goal": "سلامة اختبارات التشغيل النهائية",
+  "modified": "2025-12-12 21:58:33.590625",
+  "name": "سلامة اختبارات التشغيل النهائية",
+  "objectives": [],
+  "procedure": "إجراء الفحص النهائي للأنظمة",
+  "task": null,
+  "weekday": "Monday"
+ },
+ {
+  "date": "1",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Monthly",
+  "goal": "استكمال شهادات الإتمام النهائي",
+  "modified": "2025-12-12 21:58:33.598377",
+  "name": "استكمال شهادات الإتمام النهائي",
+  "objectives": [],
+  "procedure": "إجراء استلام وتسليم المفتاح",
+  "task": null,
+  "weekday": "Monday"
+ },
+ {
+  "date": "1",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Monthly",
+  "goal": "تسليم المفاتيح بشكل منظم",
+  "modified": "2025-12-12 21:58:33.605043",
+  "name": "تسليم المفاتيح بشكل منظم",
+  "objectives": [],
+  "procedure": "إجراء استلام وتسليم المفتاح",
+  "task": null,
+  "weekday": "Monday"
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "جودة حديد التسليح وموقعه في الدور الأرضي",
+  "modified": "2025-12-12 23:11:08.033239",
+  "name": "جودة حديد التسليح وموقعه في الدور الأرضي",
+  "objectives": [
+   {
+    "objective": "قطر الحديد",
+    "parent": "جودة حديد التسليح وموقعه في الدور الأرضي",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "مطابق للمخططات",
+    "uom": "Millimeter"
+   },
+   {
+    "objective": "غطاء الخرسانة",
+    "parent": "جودة حديد التسليح وموقعه في الدور الأرضي",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "5 سم",
+    "uom": "Centimeter"
+   }
+  ],
+  "procedure": "إجراء فحص حديد التسليح",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Weekly",
+  "goal": "مقاومة خرسانة الدور الأرضي ≥35 ميجاباسكال",
+  "modified": "2025-12-12 23:15:14.745799",
+  "name": "مقاومة خرسانة الدور الأرضي ≥35 ميجاباسكال",
+  "objectives": [
+   {
+    "objective": "هطول الخرسانة",
+    "parent": "مقاومة خرسانة الدور الأرضي ≥35 ميجاباسكال",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "7-10 سم",
+    "uom": "Centimeter"
+   }
+  ],
+  "procedure": "إجراء فحص الخرسانة المسلحة",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Daily",
+  "goal": "إغلاق جميع الملاحظات النهائية",
+  "modified": "2025-12-12 21:21:25.712916",
+  "name": "إغلاق جميع الملاحظات النهائية",
+  "objectives": [],
+  "procedure": "إجراء الفحص النهائي للأنظمة",
+  "task": null,
+  "weekday": ""
+ },
+ {
+  "date": "1",
+  "docstatus": 0,
+  "doctype": "Quality Goal",
+  "frequency": "Monthly",
+  "goal": "سلامة نظام الصرف الصحي الخارجي",
+  "modified": "2025-12-12 23:13:49.014350",
+  "name": "سلامة نظام الصرف الصحي الخارجي",
+  "objectives": [
+   {
+    "objective": "ميل المواسير",
+    "parent": "سلامة نظام الصرف الصحي الخارجي",
+    "parentfield": "objectives",
+    "parenttype": "Quality Goal",
+    "target": "2% نحو البيارة",
+    "uom": "Percent"
+   }
+  ],
+  "procedure": "إجراء فحص الصرف الخارجي",
+  "task": null,
+  "weekday": "Monday"
+ }
+]
